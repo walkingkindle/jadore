@@ -25,3 +25,14 @@
 //   // menuSlide.style.display = "none";
 //   menuSlide.style.transform = "translateX(25rem)";
 // }
+
+const opened = document.querySelector(".open-close");
+
+var x = new Date();
+var y = x.getHours();
+
+if (y >= 8 && y < 20) {
+  opened.innerHTML = "We're currently open!";
+} else {
+  opened.innerHTML = "We're closed!";
+}
