@@ -33,6 +33,7 @@ var y = x.getHours();
 
 if (y >= 8 && y < 20) {
   opened.innerHTML = "We're currently open!";
+  // opened.style.fontSize = "1.8rem";
 } else {
   opened.innerHTML = "We're closed!";
 }
