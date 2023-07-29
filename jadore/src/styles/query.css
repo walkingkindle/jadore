@@ -15,6 +15,23 @@
   .credits {
     justify-self: start;
   }
+
+  .grid div img {
+    display: none;
+  }
+  .grid-inner {
+    position: static;
+  }
+
+  .grid-info {
+    position: static;
+    border: 1px solid black;
+    padding: 1rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 @media (max-width: 700px) {
@@ -44,6 +61,7 @@
 @media (min-width: 768px) {
   .best-seller--inner {
     display: flex;
+    gap: 1rem;
   }
   .best-seller--inner .carousel-item {
     margin-right: 0;

@@ -72,7 +72,7 @@ ion-icon {
 nav {
   width: 100%;
   /* background-color: #ab8e66; */
-  background: linear-gradient(to bottom, #e9ecef 60%, #ab8e66 40%);
+  background: linear-gradient(to bottom, #e9ecef 60%, #d4b28c 40%);
   /* background-color: #adb5bd; */
   color: #000;
   padding: 0rem 2rem;
@@ -341,8 +341,11 @@ main {
 .best-seller--prev,
 .best-seller--next {
   width: 6vh;
-  height: 6vh;
-  top: 50%;
+  height: 3.1rem;
+  top: 40%;
+
+  background-color: black !important;
+
   transform: translateY(-50%);
 }
 
@@ -350,14 +353,15 @@ main {
 
 footer {
   width: 100%;
-  max-width: 130rem;
-  margin: 5rem auto;
-  background-color: transparent;
+  /* max-width: 130rem; */
+  margin: 5rem 0rem 0rem 0rem;
+  background-color: #e9ecef;
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   align-items: top;
+  padding: 2rem;
 }
 .footer-info h1 {
   font-size: 2rem;
