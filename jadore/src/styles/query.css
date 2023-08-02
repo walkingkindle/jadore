@@ -61,11 +61,15 @@
 @media (min-width: 768px) {
   .best-seller--inner {
     display: flex;
-    gap: 1rem;
   }
   .best-seller--inner .carousel-item {
     margin-right: 0;
     flex: 0 0 20%;
     display: block;
+  }
+}
+@media (max-width: 767px) {
+  .card .img-wrapper {
+    height: 17em;
   }
 }
