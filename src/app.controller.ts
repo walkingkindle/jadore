@@ -11,4 +11,13 @@ export class AppController {
     };
     return data;
   }
+  @Get('/contact')
+  @Render('contact')
+  getContact(){
+    let data = {
+      title: "Contact Page"
+    }
+    return data
+  }
+  
 }
