@@ -15,12 +15,12 @@ ion-icon: 4rem
   margin: 0;
   box-sizing: border-box;
   /* color: #000; */
-  font-family: "montserrat";
+  font-family: 'montserrat';
 }
 
 html {
   font-size: 62.5%;
-  font-family: "roboto", serif;
+  font-family: 'roboto', serif;
 }
 body {
   /* overflow-x: hidden; */
@@ -96,7 +96,7 @@ nav {
   position: relative;
   display: flex;
 }
-.upper-nav form input[type="submit"] {
+.upper-nav form input[type='submit'] {
   width: 6rem;
   cursor: pointer;
   background-color: transparent;
@@ -269,7 +269,7 @@ main {
 } */
 /* test  */
 .img-div {
-  background-image: url("../../public/images/perfumes/image-11.jpg");
+  background-image: url('/images/perfumes/image-11.jpg');
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -433,7 +433,7 @@ footer div form input {
   font-size: 1.5rem;
   padding: 1rem 5rem 1rem 1rem;
 }
-footer div form input[type="submit"] {
+footer div form input[type='submit'] {
   font-size: 1.5rem;
   padding: 1rem 1rem;
   width: 100%;
