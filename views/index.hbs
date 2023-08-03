@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{> header}}
+    <!-----------------CSS---------------------->
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/query.css" />
+
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="upper-nav">
+          <div class="logo">
+            <h1>Jadore</h1>
+            <p>Perfumes and Accessories</p>
+          </div>
+
+          <div class="browse-holder">
+            <form action="">
+              <label for="browse"></label>
+              <input type="text" name="browse" placeholder="Search" />
+              <label for="submit"></label>
+              <input
+                type="submit"
+                name="submit"
+                value=""
+                class="submit"
+                id="search-submit"
+              />
+            </form>
+            <ion-icon name="search-sharp" class="magnifier"></ion-icon>
+          </div>
+
+          <div class="log-in">
+            <a href="#">Sign in</a>
+            <div></div>
+            <a href="#">Register Account</a>
+          </div>
+
+          <div class="nav-cart">
+            <ion-icon
+              name="menu-outline"
+              class="open-menu"
+              onclick="oMenu()"
+            ></ion-icon>
+            <select name="language" id="">
+              <option value="UA">UA</option>
+              <option value="RU">RU</option>
+            </select>
+            <ion-icon name="cart-outline"></ion-icon>
+          </div>
+        </div>
+        <!-- bottom nav -->
+        <div class="bottom-nav">
+          <a href="#">full size vials</a>
+          <a href="#">3ml vials</a>
+          <a href="#">Catalogue</a>
+          <a href="#">About us</a>
+          <a href="#">Delivery</a>
+          <a href="#">Blog</a>
+          <a href="contact.html">Contacts</a>
+        </div>
+      </nav>
+
+      <!-- slider-menu width < 800px  -->
+      <div class="slider-menu">
+        <div style="border-bottom: 1px solid white">
+          <div>
+            <p>Menu</p>
+          </div>
+          <ion-icon
+            name="close-outline"
+            class="close-menu"
+            onclick="cMenu()"
+          ></ion-icon>
+        </div>
+        <a href="#">full size vials</a>
+        <a href="#">3ml vials</a>
+        <a href="#">Catalogue</a>
+        <a href="#">About us</a>
+        <a href="#">Delivery</a>
+        <a href="#">Blog</a>
+        <a href="contact.html">Contacts</a>
+      </div>
+    </header>
+    <main>
+      <section class="section-one">
+        <div
+          id="carouselExampleControlsFirst"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="carousel-cta">
+                <h2>Original perfumes</h2>
+                <a href="#">Choose</a>
+              </div>
+
+              <div class="img-div"></div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="carousel-cta">
+                <h2>Original perfumes</h2>
+                <a href="#">Choose</a>
+              </div>
+
+              <div class="img-div"></div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="carousel-cta">
+                <h2>Original perfumes</h2>
+                <a href="#">Choose</a>
+              </div>
+
+              <div class="img-div"></div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev-first"
+            type="button"
+            data-bs-target="#carouselExampleControlsFirst"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next-first"
+            type="button"
+            data-bs-target="#carouselExampleControlsFirst"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+      <!-- GRID -->
+
+      <section class="grid">
+        <div class="grid-inner">
+          <img src="/images/perfumes/image-13.jpg" alt="grid-image" />
+          <div class="grid-info">
+            <a href="#">Perfume Name - Link</a>
+          </div>
+        </div>
+        <div class="grid-inner">
+          <img src="/images/perfumes/image-14.jpg" alt="grid-image" />
+          <div class="grid-info">
+            <a href="#">Perfume Name - Link</a>
+          </div>
+        </div>
+        <div class="grid-inner">
+          <img src="/images/perfumes/image-15.jpg" alt="grid-image" />
+          <div class="grid-info">
+            <a href="#">Perfume Name - Link</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- best sellers -->
+      <section class="best-seller--section">
+        <div
+          id="carouselExampleControls"
+          class="carousel"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner best-seller--inner">
+            <div class="carousel-item best-seller--item active">
+              <div class="card">
+                <div class="img-wrapper">
+                  <img
+                    src="images/perfumes/image-1.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item best-seller--item">
+              <div class="card">
+                <div class="img-wrapper">
+                  <img
+                    src="images/perfumes/image-2.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item best-seller--item">
+              <div class="card">
+                <div class="img-wrapper">
+                  <img
+                    src="/images/perfumes/image-3.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item best-seller--item">
+              <div class="card">
+                <div class="img-wrapper">
+                  <img
+                    src="/images/perfumes/image-4.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item best-seller--item">
+              <div class="card">
+                <div class="img-wrapper">
+                  <img
+                    src="/images/perfumes/image-5.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item best-seller--item">
+              <div class="card">
+                <div class="img-wrapper">
+                  <img
+                    src="/images/perfumes/image-6.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item best-seller--item">
+              <div class="card">
+                <div class="img-wrapper">
+                  <img
+                    src="/images/perfumes/image-7.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item best-seller--item">
+              <div class="card">
+                <div class="img-wrapper">
+                  <img
+                    src="/images/perfumes/image-8.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item best-seller--item">
+              <div class="card">
+                <div class="img-wrapper">
+                  <img
+                    src="/images/perfumes/image-9.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev best-seller--prev"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next best-seller--next"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <!-- x -->
+      </section>
+    </main>
+
+    <footer>
+    {{> footer}}
+    <!-- my-script -->
+    <script src="/scripts/script.js"></script>
+    <!-- b5 -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
