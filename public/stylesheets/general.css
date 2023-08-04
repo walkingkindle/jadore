@@ -1,0 +1,68 @@
+/*
+COLORS:
+background-colors: #7c1d1d #7e0202 #220000 #002242 #680723 #4c041f #fff4e6
+font-colors: #fff #ffd8a8
+
+FONT-SIZE:
+span: 3rem
+a: 2.2rem
+ion-icon: 4rem
+
+
+*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* color: #000; */
+  font-family: 'montserrat';
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'roboto', serif;
+}
+body {
+  overflow-x: hidden;
+  /* background-color: #dee2e6; */
+  /* background: linear-gradient(to bottom right, #91171f, #ffd8a8, #91171f); */
+  /* background: linear-gradient(135deg, #b33939, #992626);
+   */
+}
+
+.disabled {
+  display: none;
+}
+
+a,
+a:link,
+a:visited {
+  font-size: 1.5rem;
+  text-decoration: none;
+
+  color: #000;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+select {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+select option {
+  color: #000;
+}
+
+span {
+  font-size: 2rem;
+}
+
+strong {
+  font-size: 2rem;
+}
+
+ion-icon {
+  font-size: 3rem;
+}

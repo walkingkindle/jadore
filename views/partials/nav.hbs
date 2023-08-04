@@ -1,0 +1,97 @@
+<header>
+  <nav>
+    <div class='upper-nav'>
+      <div class='logo'>
+        <a href="">
+        <h1>Jadore</h1>
+        <p>Perfumes and Accessories</p>
+        </a>
+      </div>
+
+      <div class='browse-holder'>
+        <form action=''>
+          <label for='browse'></label>
+          <input type='text' name='browse' placeholder='Search' />
+          <label for='submit'></label>
+          <input
+            type='submit'
+            name='submit'
+            value=''
+            class='submit'
+            id='search-submit'
+          />
+        </form>
+        <ion-icon name='search-sharp' class='magnifier'></ion-icon>
+      </div>
+
+      <div class='log-in'>
+        <a href='#'>Sign in</a>
+        <div></div>
+        <button class="sign-up">Register Account</button>
+      </div>
+
+      <div class='nav-cart'>
+        <ion-icon
+          name='menu-outline'
+          class='open-menu'
+          onclick='oMenu()'
+        ></ion-icon>
+        <select name='language' id=''>
+          <option value='UA'>UA</option>
+          <option value='RU'>RU</option>
+        </select>
+        <ion-icon name='cart-outline'></ion-icon>
+      </div>
+    </div>
+    <!-- bottom nav -->
+    <div class='bottom-nav'>
+      <a href='#'>full size vials</a>
+      <a href='#'>3ml vials</a>
+      <a href='#'>Catalogue</a>
+      <a href='#'>About us</a>
+      <a href='#'>Delivery</a>
+      <a href='#'>Blog</a>
+      <a href='/contact'>Contacts</a>
+    </div>
+  </nav>
+
+  <!-- slider-menu width < 800px  -->
+  <div class='slider-menu'>
+    <div style='border-bottom: 1px solid white'>
+      <div>
+        <p>Menu</p>
+      </div>
+      <ion-icon
+        name='close-outline'
+        class='close-menu'
+        onclick='cMenu()'
+      ></ion-icon>
+    </div>
+    <a href='#'>full size vials</a>
+    <a href='#'>3ml vials</a>
+    <a href='#'>Catalogue</a>
+    <a href='#'>About us</a>
+    <a href='#'>Delivery</a>
+    <a href='#'>Blog</a>
+    <a href='contact.html'>Contacts</a>
+  </div>
+</header>
+
+{{!-- register account --}}
+<div class="register-curtain">
+<div class="register">
+   <h2>Register</h2>
+  <form action="">
+    <label for="name">Name</label>
+    <input type="text" name="name" required>
+    <label for="email">Email</label>
+    <input type="email" name="email" required>
+    <label for="password">Password</label>
+    <input type="password" name="password" required>
+    <label for="repeat">Repeat-password</label>
+    <input type="password" name="repeat" required>
+    <input type="submit" value="Sign-up">
+  </form>
+</div>
+</div>
+{{!-- end of code --}}

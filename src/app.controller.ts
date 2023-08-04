@@ -2,7 +2,7 @@ import { Controller, Get, Render } from '@nestjs/common';
 
 @Controller()
 export class AppController {
-  @Get()
+  @Get('')
   @Render('index')
   getHello() {
     const data = {
@@ -13,11 +13,19 @@ export class AppController {
   }
   @Get('/contact')
   @Render('contact')
-  getContact(){
+  getContact() {
     let data = {
-      title: "Contact Page"
-    }
-    return data
+      title: 'Contact Page',
+    };
+    return data;
   }
-  
+
+  @Get('/sign-up')
+  @Render('sign-up')
+  getSignUp() {
+    let data = {
+      title: 'Sign-up',
+    };
+    return data;
+  }
 }
