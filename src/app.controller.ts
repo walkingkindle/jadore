@@ -8,6 +8,7 @@ export class AppController {
     const data = {
       title: 'My HTML and CSS Application',
       message: 'Welcome to my application!',
+      
     };
     return data;
   }
