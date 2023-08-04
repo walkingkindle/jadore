@@ -6,7 +6,7 @@ export class AppController {
   @Render('index')
   getHello() {
     const data = {
-      title: 'My HTML and CSS Application',
+      title: 'Jadore',
       message: 'Welcome to my application!',
       
     };
