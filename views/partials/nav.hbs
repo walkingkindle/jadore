@@ -25,7 +25,7 @@
       </div>
 
       <div class='log-in'>
-        <a href='#'>Sign in</a>
+       <button class="sign-in">Sign in</button>
         <div></div>
         <button class="sign-up">Register Account</button>
       </div>
@@ -79,7 +79,7 @@
 
 {{!-- register account --}}
 <div class="register-curtain">
-<div class="register">
+<div class="sign-modal" id="register">
    <h2>Register</h2>
   <form action="/user/register" method="post">
     <label for="name">Name</label>
@@ -91,6 +91,17 @@
     <label for="repeat">Repeat-password</label>
     <input type="password" name="repeat" required>
     <input type="submit" value="Sign-up">
+  </form>
+</div>
+{{!-- SIGN IN --}}
+<div class="sign-modal" id="log-in">
+   <h2>Sign in</h2>
+  <form action="" method="post">
+    <label for="email">Email</label>
+    <input type="email" name="email" required>
+    <label for="password">Password</label>
+    <input type="password" name="password" required>
+    <input type="submit" value="Sign-in">
   </form>
 </div>
 </div>
