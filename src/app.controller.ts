@@ -21,12 +21,5 @@ export class AppController {
     return data;
   }
 
-  @Get('/sign-up')
-  @Render('sign-up')
-  getSignUp() {
-    let data = {
-      title: 'Sign-up',
-    };
-    return data;
-  }
+
 }
