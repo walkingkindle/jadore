@@ -8,6 +8,7 @@ export class AppController {
     const data = {
       title: 'Jadore',
       message: 'Welcome to my application!',
+      
     };
     return data;
   }
@@ -20,12 +21,5 @@ export class AppController {
     return data;
   }
 
-  @Get('/sign-up')
-  @Render('sign-up')
-  getSignUp() {
-    let data = {
-      title: 'Sign-up',
-    };
-    return data;
-  }
+
 }
