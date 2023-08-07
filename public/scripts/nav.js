@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 var navigation = document.querySelector(".bottom-nav");
 var openMenu = document.querySelector(".open-menu");
 var slider = document.querySelector(".slider-menu");

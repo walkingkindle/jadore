@@ -66,3 +66,20 @@ strong {
 ion-icon {
   font-size: 3rem;
 }
+
+/* log-in--message */
+.log-in--message {
+  width: 100%;
+  max-width: 50rem;
+  /* border: 1px solid #000; */
+  font-size: 5rem;
+  color: white;
+  background-color: black;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s;
+  z-index: 999;
+  text-align: center;
+}

@@ -1,4 +1,5 @@
-import { Controller,Get,Post,Request,Response,Render,Param, Redirect,Res } from '@nestjs/common';
+/* eslint-disable prettier/prettier */
+import { Controller, Get, Post, Request, Response, Render, Param, Redirect, Res } from '@nestjs/common';
 import { UserService } from './user.service';
 import { error } from 'console';
 
@@ -31,6 +32,7 @@ export class UserController {
             res.redirect('/')
         }
     }
+    
     @Post('/login')
     async login(
         @Request() req,
@@ -41,17 +43,25 @@ export class UserController {
         if(user && user.isActivated){
             const isPasswordValid = await this.userService.verifyPassword(user,password)
             if(!isPasswordValid){
-                res.redirect('/login?login=failure') //handle
+                // failure
+               const logMessage = "Wrong password. Please try again.";
+               res.render('index', {logMessage }) //handle
             }else{
-                res.redirect('/login?login=sucess') //handle
+                // success
+                const logMessage = "Welcome user!"
+                res.render('index', {logMessage }) //handle
             }
 
         }else{
             //Couldn't find you
-            res.redirect('/login?login=failure') //handle
+            const logMessage  = "User not found.";
+            res.render('index', {logMessage }) //handle
 
         }
     }
+
+
+// 
     @Get('/activate/:activationToken')
     async activate(@Param('activationToken') activationToken: string, @Response() res): Promise<void> {
       try {
@@ -68,6 +78,9 @@ export class UserController {
 }
 
 }
+
+
+
   
   
   

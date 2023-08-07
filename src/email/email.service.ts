@@ -23,7 +23,11 @@ export class EmailService {
       from: process.env.MAIL_MAIL,
       to,
       subject: 'Account Activation',
-      html: `<p> Click on the following link to activate your account.</p><a href="${activationLink}">${activationLink}</a>`,
+      // html: `<p style="color: red;"> Click on the following link to activate your account.</p><a href="${activationLink}">${activationLink}</a>`,
+      html: `<div style="width: 100%; max-width: 500px; background: linear-gradient(to bottom right, blue, red)"> 
+      <p style="color: red;"> Click on the following link to activate your account.</p><a href="${activationLink}">${activationLink}</a>
+      </div>`,
     });
   }
 }
+// sredi ovo urose
