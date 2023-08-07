@@ -1,5 +1,6 @@
-import { Controller,Get,Post,Request,Response,Render } from '@nestjs/common';
+import { Controller,Get,Post,Request,Response,Render,Param, Redirect,Res } from '@nestjs/common';
 import { UserService } from './user.service';
+import { error } from 'console';
 
 @Controller('user')
 export class UserController {
@@ -30,5 +31,51 @@ export class UserController {
             res.redirect('/')
         }
     }
+    @Post('/login')
+    async login(
+        @Request() req,
+        @Response() res,
+    ):Promise<void>{
+        const {email,password} = req.body
+        const user = await this.userService.FindByEmail(email)
+        if(user && user.isActivated){
+            const isPasswordValid = await this.userService.verifyPassword(user,password)
+            if(!isPasswordValid){
+                res.redirect('/login?login=failure') //handle
+            }else{
+                res.redirect('/login?login=sucess') //handle
+            }
+
+        }else{
+            //Couldn't find you
+            res.redirect('/login?login=failure') //handle
+
+        }
+    }
+    @Get('/activate/:activationToken')
+    async activate(@Param('activationToken') activationToken: string, @Response() res): Promise<void> {
+      try {
+        const isActivated = await this.userService.activateAccount(activationToken);
+        if (isActivated){
+            console.log('activated me!')
+           res.redirect('/activate?activated=true') //handle
+        }
+  
+    }catch{
+        console.log(error)
+        res.redirect("/activated?activated=false") //handle
+    }
+}
 
 }
+  
+  
+  
+  
+  
+  
+  
+
+
+
+

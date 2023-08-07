@@ -18,7 +18,7 @@ export class EmailService {
   }
 
   async sendActivationMail(to: string, activationToken: string): Promise<void> {
-    const activationLink = `127.0.0.0:3000/register/activate/${activationToken}`;
+    const activationLink = `http://localhost:3000/user/activate/${encodeURIComponent(activationToken)}`;
     this.transporter.sendMail({
       from: process.env.MAIL_MAIL,
       to,
