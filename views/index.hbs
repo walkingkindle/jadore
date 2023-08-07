@@ -11,10 +11,13 @@
     <title>{{ title }}</title>
   </head>
   <body>
-      {{> nav}}
-    <main>
       {{!-- log in - message --}}
-      <p class="log-in--message">{{logMessage }}</p>
+      <div class="log-in--container">
+      <p class="log-in--message" style="{{stil}}" >{{logMessage}}</p>
+      </div>
+      {{> nav}}
+      
+    <main>
       <section class="section-one">
         <div
           id="carouselExampleControlsFirst"

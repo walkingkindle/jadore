@@ -1,4 +1,3 @@
-
 // best seller
 
 const multipleItemCarousel = document.querySelector("#carouselExampleControls");

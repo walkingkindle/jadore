@@ -7,6 +7,7 @@ nav {
   /* background-color: #adb5bd; */
   color: #000;
   padding: 0rem 2rem;
+
 }
 .upper-nav {
   max-width: 130rem;
@@ -252,3 +253,20 @@ select {
 
   font-weight: 600;
 }
+/* google-sign */
+.google-sign {
+  width: 100%;
+  max-width: 28rem;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-around;
+ 
+  padding: 1rem;
+
+  font-size: 1.6rem;
+  border: none;
+  background-color: #f8f8f8;
+}
+
+

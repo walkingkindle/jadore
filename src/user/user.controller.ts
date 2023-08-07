@@ -48,13 +48,14 @@ export class UserController {
                res.render('index', {logMessage }) //handle
             }else{
                 // success
-                const logMessage = "Welcome user!"
-                res.render('index', {logMessage }) //handle
+                const stil = "padding: 5rem;";
+                const logMessage = "Welcome back!";
+                res.render('index', {logMessage, stil }) //handle
             }
 
         }else{
             //Couldn't find you
-            const logMessage  = "User not found.";
+            const logMessage  = "User not found";
             res.render('index', {logMessage }) //handle
 
         }

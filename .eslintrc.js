@@ -15,7 +15,8 @@ module.exports = {
     node: true,
     jest: true,
   },
-  ignorePatterns: ['.eslintrc.js'],
+  // dodao script.js da bi Jquery carousel radio
+  ignorePatterns: ['.eslintrc.js', 'public/scripts/script.js'],
   rules: {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
