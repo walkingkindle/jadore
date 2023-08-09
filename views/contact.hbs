@@ -26,14 +26,18 @@
     {{!-- <link rel='stylesheet' href='stylesheets/contact.css' /> --}}
     <link rel="stylesheet" href="stylesheets/nav.css">
      <link rel="stylesheet" href="stylesheets/general.css">
+     <link rel="stylesheet" href="stylesheets/contact.css">
+       <link rel="stylesheet" href="/stylesheets/footer.css">
      <link rel="stylesheet" href="stylesheets/query.css">
   </head>
   <body>
      {{> nav}}
     <main>
-      <h1>Contact us:</h1>
+      <h1 class="h1-contacts">Contact us:</h1>
       <div class='cta'>
+  
         <div class='contact-info'>
+                <h2>Contact Info:</h2>
           <div>
             <ion-icon name='call-outline'></ion-icon>
             <p>061987643</p>
@@ -42,12 +46,14 @@
             <ion-icon name='mail-outline'></ion-icon>
             <p>jador@gmail.com</p>
           </div>
+          <div>
           <ion-icon name='time-outline'></ion-icon>
-          <div>Open Monday to Friday (08-18)h</div>
+          <p>Open Monday to Friday (08-18)h</p>
+          </div>
         </div>
 
-        <div>
-          <form action=''>
+        <div class="form-container">
+          <form action='' method="">
             <div>
               <div>
                 <label for='name'></label>
@@ -85,7 +91,9 @@
           </form>
         </div>
       </div>
+         
     </main>
+     {{> footer}}  
     <script
       type='module'
       src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'

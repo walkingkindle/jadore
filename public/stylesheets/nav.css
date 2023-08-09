@@ -107,7 +107,7 @@ select {
   max-width: 130rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(9, 1fr);
   text-align: center;
   align-items: center;
   gap: 1rem;
