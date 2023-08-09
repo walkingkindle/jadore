@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Controller, Get, Post, Request, Response, Render, Param, Redirect, Res } from '@nestjs/common';
+import { Controller, Get, Post, Request, Response, Render, Param, Redirect, Res, Query } from '@nestjs/common';
 import { UserService } from './user.service';
 import { error } from 'console';
 
@@ -63,21 +63,35 @@ export class UserController {
 
 
 // 
-    @Get('/activate/:activationToken')
-    async activate(@Param('activationToken') activationToken: string, @Response() res): Promise<void> {
-      try {
-        const isActivated = await this.userService.activateAccount(activationToken);
-        if (isActivated){
-            console.log('activated me!')
-           res.redirect('/activate?activated=true') //handle
-        }
-  
-    }catch{
-        console.log(error)
-        res.redirect("/activated?activated=false") //handle
-    }
+@Get('/activate/:activationToken')
+async activate(@Param('activationToken') activationToken: string, @Response() res): Promise<void> {
+  try {
+    const isActivated = await this.userService.activateAccount(activationToken);
+    console.log(isActivated)
+    res.redirect('/user/activated/true'); // Updated redirection
+  } catch {
+    console.log(error);
+    res.redirect("/user/activated/false"); // Updated redirection
+  }
 }
 
+
+@Get('/activated/:activated')
+async handleActivated(@Param('activated') activated: string, @Response() res): Promise<void> {
+    let logMessage = '';
+    let stil = '';
+    
+    if (activated === 'true') {
+        logMessage = 'Account activated successfully!';
+        stil = 'padding: 5rem;';
+    } else if (activated === 'false') {
+        logMessage = 'Failed to activate account.';
+    } else {
+        logMessage = 'Invalid activation request.';
+    }
+
+    res.render('index', { logMessage, stil });
+}
 }
 
 
