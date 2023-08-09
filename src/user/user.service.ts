@@ -42,20 +42,20 @@ export class UserService {
         AuthToken: activationToken,
       },
     });
+
   
     if (!user) {
       throw new NotFoundException('Invalid activation token');
     }
 
     await this.prisma.user.updateMany({
-      where:{
-        id:user.id
+      where: {
+        id: user.id,
       },
-      data:{
-        isActivated:true,
+      data: {
+        isActivated: true,
       },
-
-    })
+    });
 
     return user.isActivated
 
