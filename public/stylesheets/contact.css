@@ -12,6 +12,7 @@ main {
   justify-content: space-evenly; */
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin-bottom: 1.3rem;
 }
 .form-container form div {
   display: flex;
@@ -21,10 +22,10 @@ main {
 .form-container form div div input, .form-container form div div textarea {
    padding: 1rem; 
    padding-right: 5rem;
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 .form-container input[type="submit"] {
-  font-size: 2rem;
+  font-size: 1.7rem;
   padding: 1rem 2rem;
   margin-top: 1rem;
 }

@@ -29,7 +29,10 @@ export class UserController {
         } else{
            
             await this.userService.create(name,email,password)
-            res.redirect('/')
+            const stil = "padding: 5rem;";
+            const logMessage = "Check your email for confirmation code!";
+            res.render('index', {logMessage, stil }) //handle
+            // res.redirect('/')
         }
     }
     

@@ -35,5 +35,5 @@ curtain.addEventListener("click", (event) => {
 const logInMessage = document.querySelector('.log-in--container');
 setTimeout(() => {
   logInMessage.style.transform = "translateY(-1000%)";
-}, 1500);
+}, 2000);
 
