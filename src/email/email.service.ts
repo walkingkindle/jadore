@@ -26,11 +26,11 @@ export class EmailService {
       subject: 'Account Activation',
       // html: `<p style="color: red;"> Click on the following link to activate your account.</p><a href="${activationLink}">${activationLink}</a>`,
       html: `
- 
+  <div style="width:100%; background-color:lightgray;">
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
       <td style="padding: 20px;">
-        <div style="max-width: 600px; margin: 0 auto; font-family: Arial, sans-serif; background-color: transparent; padding: 20px; border-radius: 10px; background-image: url('${backgroundImage}'); background-size: cover;">
+        <div style="max-width: 800px; margin: 0 auto; font-family: Arial, sans-serif; background-color: transparent; padding: 20px; border-radius: 10px; background-image: url('${backgroundImage}'); background-size: cover;">
           <h2 style="color: #D4B28C;">Hello user,</h2>
           <p style="color: #D4B28C;  font-size: 15px;">You've just finished the registration process on Jadore. To validate your registration, you need to confirm your email address by clicking the button below.</p>
           <p style="text-align: center;color: #D4B28C;  font-size: 15px;">
@@ -45,6 +45,7 @@ export class EmailService {
       </td>
     </tr>
   </table>
+  </div>
       `,
     });
   }
