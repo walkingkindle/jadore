@@ -2,10 +2,14 @@
 import { Controller, Get, Post, Request, Response, Render, Param, Redirect, Res, Query } from '@nestjs/common';
 import { UserService } from './user.service';
 import { error } from 'console';
+import { AuthService } from 'src/auth/auth.service';
 
 @Controller('user')
 export class UserController {
-    constructor(private readonly userService:UserService){}
+    constructor(
+        private readonly userService:UserService,
+        ){}
+
 
     @Get('/sign-up')
     @Render('sign-up')
@@ -53,6 +57,9 @@ export class UserController {
                 // success
                 const stil = "padding: 5rem;";
                 const logMessage = "Welcome back!";
+                const payload = {sub:user.id,email:user.email}
+                const token = await this.userService.generateToken(payload)
+                res.json({access_token:token})
                 res.render('index', {logMessage, stil }) //handle
             }
 

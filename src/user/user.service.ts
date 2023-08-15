@@ -8,12 +8,14 @@ import { EmailService } from 'src/email/email.service';
 import { v4 as uuidv4 } from 'uuid';
 import { PrismaClient, User,Prisma } from '@prisma/client';
 import { NotFoundError } from 'rxjs';
+import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class UserService {
   private prisma: PrismaClient;
 
-  constructor(private readonly emailService: EmailService) {
+  
+  constructor(private readonly emailService: EmailService, private readonly jwtService:JwtService) {
     this.prisma = new PrismaClient();
   }
 
@@ -62,6 +64,9 @@ export class UserService {
     };
    
 
+  async generateToken(payload: {sub:number,email:string}): Promise<string> {
+    return this.jwtService.signAsync(payload);
+  }
 
   
 
