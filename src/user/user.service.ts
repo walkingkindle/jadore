@@ -9,6 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { PrismaClient, User,Prisma } from '@prisma/client';
 import { NotFoundError } from 'rxjs';
 import { JwtService } from '@nestjs/jwt';
+import { GoogleStrategy } from 'src/google/google.strategy';
 
 @Injectable()
 export class UserService {

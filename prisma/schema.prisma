@@ -18,3 +18,11 @@ model User{
   AuthToken String
   isActivated Boolean @default(false)
 }
+
+model GoogleUser{
+  id Int @default(autoincrement())
+  firstName String
+  lastName String
+  email String @unique
+  accessToken String
+}
