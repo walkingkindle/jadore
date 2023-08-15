@@ -1,8 +1,9 @@
 /* eslint-disable prettier/prettier */
-import { Controller, Get, Post, Request, Response, Render, Param, Redirect, Res, Query } from '@nestjs/common';
+import { Controller, Get, Post, Request, Response, Render, Param, Redirect, Res, Query, UseGuards } from '@nestjs/common';
 import { UserService } from './user.service';
 import { error } from 'console';
 import { AuthService } from 'src/auth/auth.service';
+import { AuthGuard } from  '../auth/auth.guard';
 
 @Controller('user')
 export class UserController {
@@ -39,38 +40,33 @@ export class UserController {
             // res.redirect('/')
         }
     }
-    
     @Post('/login')
-    async login(
-        @Request() req,
-        @Response() res,
-    ):Promise<void>{
-        const {email,password} = req.body
-        const user = await this.userService.FindByEmail(email)
-        if(user && user.isActivated){
-            const isPasswordValid = await this.userService.verifyPassword(user,password)
-            if(!isPasswordValid){
-                // failure
-               const logMessage = "Wrong password. Please try again.";
-               res.render('index', {logMessage }) //handle
-            }else{
-                // success
-                const stil = "padding: 5rem;";
-                const logMessage = "Welcome back!";
-                const payload = {sub:user.id,email:user.email}
-                const token = await this.userService.generateToken(payload)
-                res.json({access_token:token})
-                res.render('index', {logMessage, stil }) //handle
+    async login(@Request() req, @Response() res): Promise<void> {
+        const { email, password } = req.body;
+        const user = await this.userService.FindByEmail(email);
+    
+        if (user && user.isActivated) {
+            const isPasswordValid = await this.userService.verifyPassword(user, password);
+    
+            if (!isPasswordValid) {
+                return res.render('index', { logMessage: "Wrong password. Please try again." });
             }
-
-        }else{
-            //Couldn't find you
-            const logMessage  = "User not found";
-            res.render('index', {logMessage }) //handle
-
+            const payload = { sub: user.id, email: user.email };
+            const token = await this.userService.generateToken(payload);
+            // Only send the token in the response
+            res.header('Authorization',`Bearer ${token}`)
+            return res.render('index',{token});  
+        } else {
+            return res.render('index', { logMessage: "User not found" });
         }
     }
 
+
+@UseGuards(AuthGuard)
+@Get('profile')
+getProfile(@Request() req){
+    return req.user
+}
 
 // 
 @Get('/activate/:activationToken')
