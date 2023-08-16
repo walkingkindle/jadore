@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Controller, Get, Param, Req, Res } from '@nestjs/common';
 import { PerfumeService,PerfumeResponse } from './perfume.service';
 
@@ -17,7 +18,7 @@ export class PerfumeController {
         try{
         console.log('called me')
         const perfume = await this.perfumeService.fetchPerfumeById(id)
-        console.log(perfume.Description)
+    
         return res.render('index',{perfume}) 
     }catch(error){
         console.log("Error fetching response",error)

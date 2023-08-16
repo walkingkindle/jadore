@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable @typescript-eslint/ban-types */
 import { Injectable } from '@nestjs/common';
 import axios from 'axios';
 const API_TOKEN = process.env.STRAPI_API_TOKEN
@@ -37,7 +39,9 @@ export class PerfumeService {
         }
         try{
             const response = await axios.get(`http://127.0.0.1:1337/api/perfumes/${id}?populate=*`,config);
+            console.log("dataIs", response.data);
             console.log(response.data.data.id)
+
             const singlePerfume:PerfumeResponse = {
                 Id : response.data.data.id,
                 Name: response.data.data.attributes.Name,

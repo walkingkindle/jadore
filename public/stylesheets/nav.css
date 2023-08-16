@@ -270,3 +270,7 @@ select {
 }
 
 
+/* test */
+.sign-out, .profile-el {
+  display: none;
+}

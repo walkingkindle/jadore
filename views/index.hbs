@@ -17,8 +17,13 @@
       <p class="log-in--message" style="{{stil}}" >{{logMessage}}</p>
       </div>
       {{> nav}}
-      
-    <main>
+ 
+    <main data-token="{{token}}">
+           {{#if token}}
+  <script>
+    console.log('success');
+  </script>
+{{/if}}
       <section class="section-one">
         <div
           id="carouselExampleControlsFirst"
