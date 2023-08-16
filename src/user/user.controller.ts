@@ -30,14 +30,15 @@ export class UserController {
         const { name, email,password} = req.body
         const user = await this.userService.FindByEmail(email)
         if(user){
-            res.redirect('/user/register')
+            // res.redirect('/user/register')
+            res.render('index')
         } else{
            
             await this.userService.create(name,email,password)
             const stil = "padding: 5rem;";
             const logMessage = "Check your email for confirmation code!";
             res.render('index', {logMessage, stil }) //handle
-            // res.redirect('/')
+            // res.redirect('index')
         }
     }
     @Post('/login')

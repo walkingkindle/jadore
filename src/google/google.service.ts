@@ -1,6 +1,7 @@
+/* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'prisma/prisma.service';
-import {PrismaClient,User,Prisma} from '@prisma/client'
+import {PrismaClient, User, Prisma} from '@prisma/client';
 
 @Injectable()
 export class GoogleService {
