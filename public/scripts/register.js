@@ -24,9 +24,13 @@ signIn.onclick = () => {
 
 // curtain behavior
 curtain.addEventListener("click", (event) => {
-  if (!signUpModal.contains(event.target) && !signInModal.contains(event.target)) {
+  if (!signUpModal.contains(event.target) && !signInModal.contains(event.target) && !resetModal.contains(event.target)) {
     curtain.style.transform = "translateX(100%)";
     bodyElement.style.overflow = "scroll";
+
+    setTimeout(() => {
+      resetModal.style.display = "none";
+    }, 1000)
   }
 })
 
@@ -37,3 +41,16 @@ setTimeout(() => {
   logInMessage.style.transform = "translateY(-1000%)";
 }, 2000);
 
+// reset-password
+const forgotPass = document.querySelector('.pass-reset');
+const resetModal = document.querySelector('#reset-password');
+const returnLogIn = document.querySelector('.return-login');
+
+forgotPass.onclick = () => {
+  resetModal.style.display = "flex";
+  signInModal.style.display = "none";
+}
+returnLogIn.onclick = () => {
+  signInModal.style.display = "flex";
+  resetModal.style.display = "none";
+}

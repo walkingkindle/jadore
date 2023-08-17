@@ -116,6 +116,17 @@
     <input type="password" name="password" required>
     <input type="submit" value="Sign-in">
   </form>
+  <button class="pass-reset">Forgot Password</button>
+</div>
+{{!-- RESET PASSWORD --}}
+<div class="sign-modal" id="reset-password">
+   <h2>Reset password</h2> 
+  <form action="/user/" method="post">
+    <label for="email">Email</label>
+    <input type="email" name="email" required>
+    <input type="submit" value="Send request">
+      <button class="return-login">Back to login</button>
+  </form>
 </div>
 </div>
 {{!-- end of code --}}

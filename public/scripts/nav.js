@@ -20,3 +20,4 @@ function oMenu() {
 function cMenu() {
   slider.style.transform = "translateX(-27rem)";
 }
+

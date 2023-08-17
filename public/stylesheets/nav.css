@@ -270,7 +270,17 @@ select {
 }
 
 
-/* test */
+/* default modal settings */
 .sign-out, .profile-el {
+  display: none;
+}
+.pass-reset, .return-login {
+  text-align: center !important;
+  padding: 1rem;
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+}
+#reset-password {
   display: none;
 }
