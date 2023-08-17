@@ -99,6 +99,32 @@ async handleActivated(@Param('activated') activated: string, @Response() res): P
 
     res.render('index', { logMessage, stil });
 }
+@Post("sendActivationMail")
+async sendResetPasswordMail(@Request() req, @Response() res):Promise<void>{
+    const {email} = req.body;
+    this.userService.sendForgotPasswordMail(email)
+    return res.render("index") // Display a notification saying your email has been sent or something.
+}
+
+@Get("resetPassword/:activationLink/:id")
+async resetPasswordPage(@Request() req,@Response() res,@Param('activationLink') activationLink:string,@Param('id') id:number):Promise<void>{
+    const isOkay = this.userService.checkActivationLinkAndId(id,activationLink)
+    if(!isOkay){
+        //display a notification here that link is invalid.
+        console.log("link invalid")
+    }
+    return res.render("resetPass",{id:id})
+}
+@Post("changeMyPassword/:id")
+async changePassword(@Request() req, @Response() res,@Param("id") id:number ):Promise<void>{
+    const {password} = req.body
+    console.log("Here is the id",id)
+    this.userService.changePassword(password,id)
+    //Display here a message that that was a sucess.
+    return res.render("index")
+
+
+}
 }
 
 

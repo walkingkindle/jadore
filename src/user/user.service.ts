@@ -82,4 +82,70 @@ export class UserService {
   async verifyPassword(user:User,password:string):Promise<boolean>{
     return bcrypt.compare(password,user.password)
   }
+
+  async sendForgotPasswordMail(userEmail:string):Promise<boolean>{
+    const user = await this.prisma.user.findFirst({
+      where:{
+        email:userEmail,
+      },
+    })
+    if(!user){
+      console.log("Couldn't find you.")
+      return false
+    }
+    try{
+      const resetToken = (await user).AuthToken
+      const id = (await user).id
+      this.emailService.sendForgotPasswordMail(resetToken,id,userEmail)
+      return true
+    }catch(error){
+      console.error("Error sending mail",error)
+      return false
+    }
+  }
+
+  async checkActivationLinkAndId(id:number,activationLink:string):Promise<boolean>{
+    var realId: number = +id
+    const user = await this.prisma.user.findFirst({
+      where:{
+        id:realId,
+      },
+    })
+    if(!user){
+      return false
+    }
+    return (await user).AuthToken === activationLink
+    
+  }
+
+
+  async changePassword(newPassword:string,id:number):Promise<boolean>{
+    var realId = +id;
+    const user = await this.prisma.user.findFirst({
+      where:{
+        id:realId,
+      },
+    })
+    if(!user){
+      console.log("couldn't find user")
+      return false
+    }
+    try{
+      const newHashedPassword = await bcrypt.hash(newPassword,10)
+      await this.prisma.user.updateMany({
+        where:{
+          id:realId
+        },
+        data:{
+          password:newHashedPassword
+        }
+      })
+      return true
+    }catch(error){
+      console.log("Error changing password",error)
+      return false
+    }
+  }
+
+
 }

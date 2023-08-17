@@ -49,5 +49,23 @@ export class EmailService {
       `,
     });
   }
+
+
+  async sendForgotPasswordMail(resetToken:string,userId:number,email:string):Promise<boolean>{
+      const resetPasswordLink = `http://localhost:3000/user/resetPassword/${resetToken}/${userId}`
+      try{
+        this.transporter.sendMail({
+          from:process.env.MAIL_MAIL,
+          to:email,
+          subject:"Account Reset",
+          html:`<p>Please reset your password with the following link<a href="${resetPasswordLink}">Link<a/></p>"`
+        
+        })
+        return true
+      }catch(error){
+        console.log("Error sending mail",error)
+        return false
+      }
+  }
 }
 // sredi ovo urose
