@@ -1,5 +1,12 @@
 // best seller
 
+
+ function setAccessToken(token) {
+  document.cookie = `access_token=${token}; expires=${new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toUTCString()}; secure; HttpOnly`;
+}
+
+
+
 const multipleItemCarousel = document.querySelector("#carouselExampleControls");
 
 if (window.matchMedia("(min-width:576px)").matches) {
@@ -33,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const token = mainElement.getAttribute("data-token");
 
     if (token) {
+      setAccessToken(token)  //ovde se cuva jwt token da bi samo korisnik koji ima jwt token u svojim kolačićima mogao da pristupi funkcijama kao sto su logut,  shopping cart itd
       const signInElement = document.querySelector(".sign-in");
       const signUpElement = document.querySelector(".sign-up");
       const signOutElement = document.querySelector(".sign-out");

@@ -5,6 +5,7 @@ import { error } from 'console';
 import { AuthService } from 'src/auth/auth.service';
 import { AuthGuard } from  '../auth/auth.guard';
 
+
 @Controller('user')
 export class UserController {
     constructor(
@@ -52,15 +53,16 @@ export class UserController {
             if (!isPasswordValid) {
                 return res.render('index', { logMessage: "Wrong password. Please try again." });
             }
+            
             const payload = { sub: user.id, email: user.email };
             const token = await this.userService.generateToken(payload);
-            // Only send the token in the response
-            res.header('Authorization',`Bearer ${token}`)
-            return res.render('index',{token});  
+            
+            return res.render('index', { token });  
         } else {
             return res.render('index', { logMessage: "User not found" });
         }
     }
+    
 
 
 @UseGuards(AuthGuard)
@@ -123,7 +125,11 @@ async changePassword(@Request() req, @Response() res,@Param("id") id:number ):Pr
     //Display here a message that that was a sucess.
     return res.render("index")
 
-
+}
+@Post("/logout")
+async logout(@Response() res):Promise<void>{
+    res.clearCookie('access_token')
+    return res.redirect("/")
 }
 }
 
