@@ -1,0 +1,35 @@
+label,
+input {
+  font-size: 2rem;
+
+  outline: none;
+  border: none;
+  padding: 1rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  width: 100%;
+  max-width: 50rem;
+  margin: 15rem auto;
+
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+input[type='submit'] {
+  width: 100%;
+  max-width: 15rem;
+  padding: 1rem;
+  border: none;
+}
+body {
+  background: linear-gradient(to bottom, #e9ecef, #d4b28c);
+}
+h1 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 3rem;
+}
