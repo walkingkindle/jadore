@@ -97,5 +97,23 @@ export class EmailService {
       return false;
     }
   }
+  async sendContactMail(name:string,email:string,query:string):Promise<boolean>{
+    try{
+
+    this.transporter.sendMail({
+      from:process.env.MAIL_MAIL,
+      to:email,
+      subject: `Mail from ${name}`,
+      html:`<p>${query}</p>`
+    })
+    return true
+    }catch(error){
+      console.error("Error sending mail,",error)
+    }
+    return false
+  }
+
+
 }
+
 // sredi ovo urose
