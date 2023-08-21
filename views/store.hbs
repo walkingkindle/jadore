@@ -1,0 +1,188 @@
+<html lang="en">
+  <head>
+    {{> header}}
+    <!-----------------CSS---------------------->
+     <link rel="stylesheet" href="/stylesheets/general.css" />
+     <link rel="stylesheet" href="/stylesheets/nav.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/store.css" />
+    <link rel="stylesheet" href="/stylesheets/footer.css" />
+    <link rel="stylesheet" href="/stylesheets/query.css" />
+
+    <title>{{ title }}</title>
+  </head>
+  <body>
+      {{!-- log in - message --}}
+      <div class="log-in--container">
+      <p class="log-in--message" style="{{stil}}" >{{logMessage}}</p>
+      </div>
+      {{> nav}}
+  
+   <h1 class="store-title">Full size vials</h2>
+ <main>
+  <div class="store-options">
+    <div class="brends">
+      <button>Brends</button>
+      <form class="grid-style">
+        <div>
+        <input type="checkbox" name="jadore" id="jadore">
+        <label for="jadore">Jadore</label>
+        </div>
+   <div>
+        <input type="checkbox" name="jadore" id="jadore">
+        <label for="jadore">Jadore</label>
+        </div>
+           <div>
+        <input type="checkbox" name="jadore" id="jadore">
+        <label for="jadore">Jadore</label>
+        </div>
+           <div>
+        <input type="checkbox" name="jadore" id="jadore">
+        <label for="jadore">Jadore</label>
+        </div>
+           <div>
+        <input type="checkbox" name="jadore" id="jadore">
+        <label for="jadore">Jadore</label>
+        </div>
+           <div>
+        <input type="checkbox" name="jadore" id="jadore">
+        <label for="jadore">Jadore</label>
+        </div>
+      </form>
+    </div>
+    {{!-- x --}}
+     <div class="brends">
+      <button>Aroma</button>
+      <form class="grid-style">
+        <div>
+        <input type="checkbox" name="jadore" id="jadore">
+        <label for="jadore">Jadore</label>
+        </div>
+   <div>
+        <input type="checkbox" name="jadore" id="jadore">
+        <label for="jadore">Jadore</label>
+        </div>
+           <div>
+        <input type="checkbox" name="jadore" id="jadore">
+        <label for="jadore">Jadore</label>
+        </div>
+           <div>
+        <input type="checkbox" name="jadore" id="jadore">
+        <label for="jadore">Jadore</label>
+        </div>
+           <div>
+        <input type="checkbox" name="jadore" id="jadore">
+        <label for="jadore">Jadore</label>
+        </div>
+           <div>
+        <input type="checkbox" name="jadore" id="jadore">
+        <label for="jadore">Jadore</label>
+        </div>
+      </form>
+    </div>
+    {{!-- x --}}
+     <div class="brends">
+      <button>Quantity</button>
+      <form class="grid-style">
+        <div>
+        <input type="checkbox" name="jadore" id="jadore">
+        <label for="jadore">1</label>
+        </div>
+   <div>
+        <input type="checkbox" name="jadore" id="jadore">
+        <label for="jadore">2</label>
+        </div>
+           <div>
+        <input type="checkbox" name="jadore" id="jadore">
+        <label for="jadore">5</label>
+        </div>
+           <div>
+        <input type="checkbox" name="jadore" id="jadore">
+        <label for="jadore">10</label>
+        </div>
+           <div>
+        <input type="checkbox" name="jadore" id="jadore">
+        <label for="jadore">15</label>
+        </div>
+           <div>
+        <input type="checkbox" name="jadore" id="jadore">
+        <label for="jadore">20</label>
+        </div>
+      </form>
+    </div>
+    {{!-- x --}}
+     <div class="price-range">
+      <button>Price</button>
+      <form >
+        <input type="range" id="price" name="price" min="0" max="1000">
+      </form>
+    </div>
+  </div>
+
+  {{!-- OVAJ MARKUP PREDSTAVLJA JEDAN PROIZVOD --}}
+  <div class="store-products">
+    <div class="store-product">
+      <img src="/images/perfumes/image-9.jpg" alt="perfume">
+      <div>
+        <p>perfume name</p>
+        <p>perfume description</p>
+        <select name="quantity" id="">
+          <option value="1">1ml - 1$</option>
+        </select>
+        <a href="#">Order</a>
+      </div>
+    </div>
+
+
+    {{!-- x --}}
+     <div class="store-product">
+      <img src="/images/perfumes/image-9.jpg" alt="perfume">
+      <div>
+        <p>perfume name</p>
+        <p>perfume description</p>
+        <select name="quantity" id="">
+          <option value="1">1ml - 1$</option>
+        </select>
+        <a href="#">Order</a>
+      </div>
+    </div>
+    {{!-- x --}}
+     <div class="store-product">
+      <img src="/images/perfumes/image-9.jpg" alt="perfume">
+      <div>
+        <p>perfume name</p>
+        <p>perfume description</p>
+        <select name="quantity" id="">
+          <option value="1">1ml - 1$</option>
+        </select>
+        <a href="#">Order</a>
+      </div>
+    </div>
+    {{!-- x --}}
+      <div class="store-product">
+      <img src="/images/perfumes/image-9.jpg" alt="perfume">
+      <div>
+        <p>perfume name</p>
+        <p>perfume description</p>
+        <select name="quantity" id="">
+          <option value="1">1ml - 1$</option>
+        </select>
+        <a href="#">Order</a>
+      </div>
+    </div>
+  </div>
+ </main>
+
+{{> footer}}
+ <script
+      type='module'
+      src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'
+    ></script>
+    <script
+      nomodule
+      src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'
+    ></script>
+      <script src="/scripts/register.js"></script>
+    <script src="/scripts/nav.js"></script>
+  </body>
+

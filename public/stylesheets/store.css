@@ -1,0 +1,99 @@
+main {
+  width: 100%;
+  max-width: 130rem;
+  margin: 5rem auto;
+
+  display: grid;
+  grid-template-columns: 32rem 1fr;
+
+  gap: 5rem;
+}
+
+.store-title {
+  width: 100%;
+  max-width: 130rem;
+  margin: 5rem auto;
+  border-bottom: 1px solid black;
+}
+
+/* store-options */
+.store-options {
+  /* border: 1px solid lightblue; */
+}
+
+.store-options button {
+  width: 100%;
+  max-width: 20rem;
+  margin-top: 1rem;
+  margin-left: 4.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+}
+
+.grid-style {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.store-options form div {
+  font-size: 1.5rem;
+
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* brends */
+.brends {
+  border: 0.5px solid black;
+  padding: 1rem;
+}
+
+/* price-range */
+.price-range {
+  display: flex;
+  flex-direction: column;
+
+  padding: 1rem;
+
+  border: 1px solid black;
+}
+.price-range form {
+  margin-top: 1rem;
+  align-self: center;
+}
+.price-range form input {
+  width: 25rem;
+}
+
+/* store-products */
+.store-products {
+  /* border: 1px solid pink; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.store-product img {
+  width: 100%;
+  object-fit: cover;
+}
+.store-product div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.store-product select {
+  border: 1px solid gray;
+  font-size: 1.5rem;
+}
+.store-product a {
+  /* align-self: center; */
+  text-align: center;
+  border: 1px solid gray;
+  padding: 0.5rem 1rem;
+  width: 224.5px;
+  max-width: 224.5px;
+}
+.store-product p {
+  font-size: 1.4rem;
+}

@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Controller, Get, Render } from '@nestjs/common';
 
 @Controller()
@@ -8,18 +9,23 @@ export class AppController {
     const data = {
       title: 'Jadore',
       message: 'Welcome to my application!',
-      
     };
     return data;
   }
   @Get('/contact')
   @Render('contact')
   getContact() {
-    let data = {
+    const data = {
       title: 'Contact Page',
     };
     return data;
   }
-
-
+  @Get('/store')
+  @Render('store')
+  getStore() {
+    const data = {
+      title: 'store Page',
+    };
+    return data;
+  }
 }

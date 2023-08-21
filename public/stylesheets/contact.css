@@ -5,7 +5,6 @@ main {
 }
 .h1-contacts {
   text-align: center;
-  
 }
 .cta {
   /* display: flex;
@@ -19,13 +18,20 @@ main {
   flex-direction: column;
   gap: 0.5rem;
 }
-.form-container form div div input, .form-container form div div textarea {
-   padding: 1rem; 
-   padding-right: 5rem;
+.form-container form div div input,
+.form-container form div div textarea {
+  padding: 1rem;
+  padding-right: 5rem;
   font-size: 1.7rem;
 }
-.form-container input[type="submit"] {
+.form-container input[type='submit'] {
   font-size: 1.7rem;
   padding: 1rem 2rem;
   margin-top: 1rem;
+}
+
+.social-media--links a {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
 }

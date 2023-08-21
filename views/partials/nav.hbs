@@ -2,9 +2,9 @@
   <nav>
     <div class='upper-nav'>
       <div class='logo'>
-        <a href="">
-        <h1>Jadore</h1>
-        <p>Perfumes and Accessories</p>
+        <a href='/'>
+          <h1>Jadore</h1>
+          <p>Perfumes and Accessories</p>
         </a>
       </div>
 
@@ -25,13 +25,13 @@
       </div>
 
       <div class='log-in'>
-        <form action="/user/logout" method="post">
-        <button class="sign-out default-none" type="submit">Sign Out</button>
+        <form action='/user/logout' method='post'>
+          <button class='sign-out default-none' type='submit'>Sign Out</button>
         </form>
-       <button class="sign-in">Sign in</button>
+        <button class='sign-in'>Sign in</button>
         <div></div>
-        <button class="sign-up">Register Account</button>
-         <button class="profile-el default-none">Profile</button>
+        <button class='sign-up'>Register Account</button>
+        <button class='profile-el default-none'>Profile</button>
       </div>
 
       <div class='nav-cart'>
@@ -49,19 +49,17 @@
     </div>
     <!-- bottom nav -->
     <div class='bottom-nav'>
-      <a href='#'>full size vials</a>
-    <a href='#'>Decanting</a>
-    <a href='#'>Makeup</a>
-    <a href='#'>Victoria's Secret</a>
-    <a href='#'>Catalogue</a>
-    <a href='#'>About us</a>
-     <a href='#'>Payment</a>
+      <a href='/store'>full size vials</a>
+      <a href='/'>Decanting</a>
+      <a href='#'>Makeup</a>
+      <a href='#'>Victoria's Secret</a>
+      <a href='#'>Catalogue</a>
+      <a href='#'>About us</a>
+      <a href='#'>Payment</a>
       <a href='#'>News</a>
-    <a href='/contact'>Contacts</a>
+      <a href='/contact'>Contacts</a>
     </div>
 
-
-     
   </nav>
 
   <!-- slider-menu width < 800px  -->
@@ -76,59 +74,63 @@
         onclick='cMenu()'
       ></ion-icon>
     </div>
-    <a href='#'>full size vials</a>
+    <a href='/store'>full size vials</a>
     <a href='#'>Decanting</a>
     <a href='#'>Makeup</a>
     <a href='#'>Victoria's Secret</a>
     <a href='#'>Catalogue</a>
     <a href='#'>About us</a>
-     <a href='#'>Payment and Delivery</a>
-      <a href='#'>News and Promotions</a>
+    <a href='#'>Payment and Delivery</a>
+    <a href='#'>News and Promotions</a>
     <a href='/contact'>Contacts</a>
   </div>
 </header>
 
-{{!-- register account --}}
-<div class="register-curtain">
-<div class="sign-modal" id="register">
-   <h2>Register</h2>
-  <form action="/user/register" method="post">
-    <label for="name">Name</label>
-    <input type="text" name="name" required>
-    <label for="email">Email</label>
-    <input type="email" name="email" required>
-    <label for="password">Password</label>
-    <input type="password" name="password" required>
-    <label for="repeat">Repeat-password</label>
-    <input type="password" name="repeat" required>
-    <input type="submit" value="Sign-up">
-  </form>
+{{! register account }}
+<div class='register-curtain'>
+  <div class='sign-modal' id='register'>
+    <h2>Register</h2>
+    <form action='/user/register' method='post'>
+      <label for='name'>Name</label>
+      <input type='text' name='name' required />
+      <label for='email'>Email</label>
+      <input type='email' name='email' required />
+      <label for='password'>Password</label>
+      <input type='password' name='password' required />
+      <label for='repeat'>Repeat-password</label>
+      <input type='password' name='repeat' required />
+      <input type='submit' value='Sign-up' />
+    </form>
+  </div>
+  {{! SIGN IN }}
+  <div class='sign-modal' id='log-in'>
+    <h2>Sign in</h2>
+    <a href='/google/redirect' class='google-sign'>
+      <img
+        src='/images/logos/google.png'
+        alt='google icon'
+        class='google-icon'
+      />
+      Sign in with Google
+    </a>
+    <form action='/user/login' method='post'>
+      <label for='email'>Email</label>
+      <input type='email' name='email' required />
+      <label for='password'>Password</label>
+      <input type='password' name='password' required />
+      <input type='submit' value='Sign-in' />
+    </form>
+    <button class='pass-reset'>Forgot Password</button>
+  </div>
+  {{! RESET PASSWORD }}
+  <div class='sign-modal' id='reset-password'>
+    <h2>Reset password</h2>
+    <form action='/user/sendActivationMail' method='post'>
+      <label for='email'>Email</label>
+      <input type='email' name='email' required />
+      <input type='submit' value='Send request' />
+      <button class='return-login'>Back to login</button>
+    </form>
+  </div>
 </div>
-{{!-- SIGN IN --}}
-<div class="sign-modal" id="log-in">
-   <h2>Sign in</h2>
-   <a href="/google/redirect" class="google-sign"> 
-    <img src="/images/logos/google.png" alt="google icon" class="google-icon">
-     Sign in with Google
-     </a>
-  <form action="/user/login" method="post">
-    <label for="email">Email</label>
-    <input type="email" name="email" required>
-    <label for="password">Password</label>
-    <input type="password" name="password" required>
-    <input type="submit" value="Sign-in">
-  </form>
-  <button class="pass-reset">Forgot Password</button>
-</div>
-{{!-- RESET PASSWORD --}}
-<div class="sign-modal" id="reset-password">
-   <h2>Reset password</h2> 
-  <form action="/user/sendActivationMail" method="post">
-    <label for="email">Email</label>
-    <input type="email" name="email" required>
-    <input type="submit" value="Send request">
-      <button class="return-login">Back to login</button>
-  </form>
-</div>
-</div>
-{{!-- end of code --}}
+{{! end of code }}
