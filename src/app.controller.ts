@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Controller, Get, Render } from '@nestjs/common';
+import { Controller, Get, Render,Response } from '@nestjs/common';
 
 @Controller()
 export class AppController {
@@ -21,11 +21,7 @@ export class AppController {
     return data;
   }
   @Get('/store')
-  @Render('store')
-  getStore() {
-    const data = {
-      title: 'store Page',
-    };
-    return data;
+  getStore(@Response() res) {
+   return res.redirect("/store/storemain")
   }
 }

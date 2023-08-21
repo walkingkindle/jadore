@@ -21,7 +21,7 @@ export class PerfumeService {
             },
         }
         try{
-            const response = await axios.get("http://127.0.0.1:1337/api/perfumes",config)
+            const response = await axios.get("http://127.0.0.1:1337/api/perfumes?populates=true",config)
             const data = response.data
             return response.data
         }catch(error){

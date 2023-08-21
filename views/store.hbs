@@ -121,55 +121,19 @@
 
   {{!-- OVAJ MARKUP PREDSTAVLJA JEDAN PROIZVOD --}}
   <div class="store-products">
-    <div class="store-product">
-      <img src="/images/perfumes/image-9.jpg" alt="perfume">
-      <div>
-        <p>perfume name</p>
-        <p>perfume description</p>
-        <select name="quantity" id="">
-          <option value="1">1ml - 1$</option>
-        </select>
-        <a href="#">Order</a>
-      </div>
-    </div>
-
-
     {{!-- x --}}
+    {{#each perfumeData}}
      <div class="store-product">
-      <img src="/images/perfumes/image-9.jpg" alt="perfume">
+      <img src={{this.ImageUrl}} alt="perfume">
       <div>
-        <p>perfume name</p>
-        <p>perfume description</p>
+        <p>{{this.Name}}</p>
         <select name="quantity" id="">
-          <option value="1">1ml - 1$</option>
+          <option value="1">{{this.Price}}</option>
         </select>
         <a href="#">Order</a>
       </div>
     </div>
-    {{!-- x --}}
-     <div class="store-product">
-      <img src="/images/perfumes/image-9.jpg" alt="perfume">
-      <div>
-        <p>perfume name</p>
-        <p>perfume description</p>
-        <select name="quantity" id="">
-          <option value="1">1ml - 1$</option>
-        </select>
-        <a href="#">Order</a>
-      </div>
-    </div>
-    {{!-- x --}}
-      <div class="store-product">
-      <img src="/images/perfumes/image-9.jpg" alt="perfume">
-      <div>
-        <p>perfume name</p>
-        <p>perfume description</p>
-        <select name="quantity" id="">
-          <option value="1">1ml - 1$</option>
-        </select>
-        <a href="#">Order</a>
-      </div>
-    </div>
+    {{/each}}
   </div>
  </main>
 

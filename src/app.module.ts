@@ -5,6 +5,7 @@ import { UserModule } from './user/user.module';
 import {PrismaModule} from '../prisma/prisma.module'
 import { GoogleModule } from './google/google.module';
 import { PerfumeModule } from './perfume/perfume.module';
+import { StoreModule } from './store/store.module';
 
 @Module({
 
@@ -15,6 +16,7 @@ import { PerfumeModule } from './perfume/perfume.module';
   UserModule,
   GoogleModule,
   PerfumeModule,
+  StoreModule,
 ],
 })
 export class AppModule {}

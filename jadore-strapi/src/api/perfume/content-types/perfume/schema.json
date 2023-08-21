@@ -4,7 +4,8 @@
   "info": {
     "singularName": "perfume",
     "pluralName": "perfumes",
-    "displayName": "Perfume"
+    "displayName": "Perfume",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,17 +19,6 @@
     "Description": {
       "type": "richtext"
     },
-    "Image": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true,
-      "required": true
-    },
     "Price": {
       "type": "float",
       "required": true
@@ -36,6 +26,9 @@
     "perfumeid": {
       "type": "uid",
       "targetField": "Name"
+    },
+    "ImageUrl": {
+      "type": "string"
     }
   }
 }

@@ -13,7 +13,6 @@ export class EmailController {
     let stil = '';
     logMessage = 'We have received your message!';
     stil = 'padding: 5rem';
-    console.log('Notification that the email has been sent to us'); //Notification here.
     res.render('index', { logMessage, stil });
   }
 }
