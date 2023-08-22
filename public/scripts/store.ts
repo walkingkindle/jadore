@@ -1,26 +1,26 @@
 /* eslint-disable prettier/prettier */
-const sliderRange = document.querySelector('.range-slider') as HTMLInputElement;
-const sliderValue = document.querySelector('.range-value') as HTMLSpanElement;
+// const sliderRange = document.querySelector('.range-slider') as HTMLInputElement;
+// const sliderValue = document.querySelector('.range-value') as HTMLSpanElement;
 
-sliderRange.addEventListener('input', function () {
-  sliderValue.textContent = sliderRange.value;
-});
+// sliderRange.addEventListener('input', function () {
+//   sliderValue.textContent = sliderRange.value;
+// });
 
-const testBox = document.querySelector('.test-box') as HTMLInputElement;
+// const testBox = document.querySelector('.test-box') as HTMLInputElement;
 
-const testProducts = document.querySelectorAll(
-  '.test-products',
-) as NodeListOf<HTMLDivElement>;
+// const testProducts = document.querySelectorAll(
+//   '.test-products',
+// ) as NodeListOf<HTMLDivElement>;
 
-testBox.addEventListener('change', () => {
-  testProducts.forEach((el) => {
-    if (el.style.display == 'none') {
-      el.style.display = 'block';
-    } else {
-      el.style.display = 'none';
-    }
-  });
-});
+// testBox.addEventListener('change', () => {
+//   testProducts.forEach((el) => {
+//     if (el.style.display == 'none') {
+//       el.style.display = 'block';
+//     } else {
+//       el.style.display = 'none';
+//     }
+//   });
+// });
 
 // categories
 const brends = document.querySelector('.brends') as HTMLDivElement;
