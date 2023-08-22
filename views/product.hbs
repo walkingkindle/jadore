@@ -1,0 +1,76 @@
+<html lang="en">
+  <head>
+    {{> header}}
+    <!-----------------CSS---------------------->
+     <link rel="stylesheet" href="/stylesheets/general.css" />
+     <link rel="stylesheet" href="/stylesheets/nav.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+       <link rel="stylesheet" href="/stylesheets/product.css" />
+    <link rel="stylesheet" href="/stylesheets/footer.css" />
+    <link rel="stylesheet" href="/stylesheets/query.css" />
+
+    <title>{{ title }}</title>
+  </head>
+  <body>
+      {{!-- log in - message --}}
+      <div class="log-in--container">
+      <p class="log-in--message" style="{{stil}}" >{{logMessage}}</p>
+      </div>
+      {{> nav}}
+      {{!-- main --}}
+      <main>
+        <div class="product-container">
+          <img src="/images/perfumes/image-1.jpg" alt="a perfume">
+          <div class="product-info">
+              <div class="p-info--one">
+                <strong>
+                  Jadore Perfume
+                </strong>
+                <p>In stock</p>
+              </div>
+              <div class="p-info--two">
+                <p>Article: 0372</p>
+              </div>
+              <div class="p-info--three">
+                 <form>
+                <input type="radio" name="volume" value="3ml" id="3ml">
+                 <label for="3ml">3ml</label>
+
+               <input type="radio" name="volume" value="5ml" id="5ml">
+               <label for="5ml">5ml</label>
+
+               <input type="radio" name="volume" value="10ml" id="10ml">
+               <label for="10ml">10ml</label>
+
+               <input type="radio" name="volume" value="15ml" id="15ml">
+                <label for="15ml">15ml</label>
+
+               <input type="radio" name="volume" value="20ml" id="20ml">
+               <label for="20ml">20ml</label>
+
+               <input type="radio" name="volume" value="30ml" id="30ml">
+              <label for="30ml">30ml</label>
+            </form>
+              </div>
+              <div class="p-info--four">
+                <p class="p-info--four--price">30$</p>
+                <a href="#" class="p-info--four--buy">Buy</a>
+              </div>
+          </div>
+        </div>
+
+
+      </main>
+      {{!-- endmain --}}
+  {{> footer}}
+ <script
+      type='module'
+      src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'
+    ></script>
+    <script
+      nomodule
+      src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'
+    ></script>
+      <script src="/scripts/register.js"></script>
+    <script src="/scripts/nav.js"></script>
+  </body>

@@ -124,19 +124,23 @@
   <div class="store-products">
     {{!-- x --}}
     {{#each perfumeData}}
+    
      <div class="store-product">
+       <a href="/product">
       <img src={{this.ImageUrl}} alt="perfume">
+      </a>
       <div>
+        <a href="/product">
         <p>{{this.Name}}</p>
+        </a>
         <select name="quantity" id="">
           <option value="1">{{this.Price}}</option>
         </select>
-        <a href="#">Order</a>
+         <a href="#" class="product-order">Order</a>
       </div>
-    </div>
+    </div>  
     {{/each}}
-  </div>
- 
+   </div>
   </div>
  </main>
 
