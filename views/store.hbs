@@ -21,24 +21,24 @@
    <h1 class="store-title">Full size vials</h2>
  <main>
   <div class="store-options">
-    <div class="brends">
+    <div class="brends categories">
       <button>Brends</button>
-      <form class="grid-style">
+      <form class="grid-style brend-categories">
         <div>
-        <input type="checkbox" name="jadore" id="jadore">
-        <label for="jadore">Jadore</label>
+        <input type="checkbox" name="jadore" id="jadore" >
+        <label for="jadore">JadoreStandard</label>
         </div>
    <div>
-        <input type="checkbox" name="jadore" id="jadore">
-        <label for="jadore">Jadore</label>
+        <input type="checkbox" name="jadore" id="jadore" class="test-box">
+        <label for="jadore">JadorePremium</label>
         </div>
            <div>
         <input type="checkbox" name="jadore" id="jadore">
-        <label for="jadore">Jadore</label>
+        <label for="jadore">JadoreSuper</label>
         </div>
            <div>
         <input type="checkbox" name="jadore" id="jadore">
-        <label for="jadore">Jadore</label>
+        <label for="jadore">JadoreUltra</label>
         </div>
            <div>
         <input type="checkbox" name="jadore" id="jadore">
@@ -51,9 +51,9 @@
       </form>
     </div>
     {{!-- x --}}
-     <div class="brends">
+     <div class="aroma categories">
       <button>Aroma</button>
-      <form class="grid-style">
+      <form class="grid-style aroma-categories">
         <div>
         <input type="checkbox" name="jadore" id="jadore">
         <label for="jadore">Jadore</label>
@@ -81,9 +81,9 @@
       </form>
     </div>
     {{!-- x --}}
-     <div class="brends">
+     <div class="quantity categories">
       <button>Quantity</button>
-      <form class="grid-style">
+      <form class="grid-style quantity-categories">
         <div>
         <input type="checkbox" name="jadore" id="jadore">
         <label for="jadore">1</label>
@@ -113,8 +113,9 @@
     {{!-- x --}}
      <div class="price-range">
       <button>Price</button>
-      <form >
-        <input type="range" id="price" name="price" min="0" max="1000">
+      <form class="price-categories">
+        <input type="range" id="price" class="range-slider" name="price" min="0" max="100" value="0">
+        <span class="range-value">0</span>
       </form>
     </div>
   </div>
@@ -134,6 +135,9 @@
       </div>
     </div>
     {{/each}}
+   
+  </div>
+ 
   </div>
  </main>
 
@@ -148,5 +152,6 @@
     ></script>
       <script src="/scripts/register.js"></script>
     <script src="/scripts/nav.js"></script>
+    <script src="/scripts/store.js"></script>
   </body>
 

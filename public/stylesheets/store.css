@@ -23,9 +23,9 @@ main {
 
 .store-options button {
   width: 100%;
-  max-width: 20rem;
+  max-width: 30rem;
   margin-top: 1rem;
-  margin-left: 4.5rem;
+  /* margin-left: 4.5rem; */
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
 }
@@ -39,11 +39,14 @@ main {
   font-size: 1.5rem;
 
   margin-top: 1rem;
-  text-align: center;
+  /* text-align: center; */
+
+  /* display: flex; */
+  /* gap: 0.5rem; */
 }
 
 /* brends */
-.brends {
+.categories {
   border: 0.5px solid black;
   padding: 1rem;
 }
@@ -65,6 +68,12 @@ main {
   width: 25rem;
 }
 
+.brends,
+.aroma,
+.quantity {
+  border-bottom: none;
+}
+
 /* store-products */
 .store-products {
   /* border: 1px solid pink; */
@@ -74,6 +83,7 @@ main {
 }
 .store-product img {
   width: 100%;
+  height: 15rem;
   object-fit: cover;
 }
 .store-product div {
@@ -82,10 +92,19 @@ main {
   justify-content: center;
   gap: 0.5rem;
 }
+.store-product p {
+  text-align: center;
+  padding: 0.5rem;
+}
+
 .store-product select {
   border: 1px solid gray;
   font-size: 1.5rem;
 }
+.store-product select option {
+  text-align: center;
+}
+
 .store-product a {
   /* align-self: center; */
   text-align: center;
@@ -96,4 +115,37 @@ main {
 }
 .store-product p {
   font-size: 1.4rem;
+}
+
+/* range-styling */
+/* Style for the slider track */
+.range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%; /* Set the width to fill the container */
+  height: 4px; /* Set the height to make it a thin line */
+  background: #d3d3d3; /* Gray background for the track */
+  outline: none;
+  border-radius: 2px; /* Rounded corners */
+}
+
+/* Style for the slider thumb */
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px; /* Width of the thumb */
+  height: 12px; /* Height of the thumb */
+  background: #007bff; /* Blue color for the thumb */
+  border-radius: 50%; /* Circular shape */
+  cursor: pointer;
+}
+
+/* Style for the range value */
+.range-value {
+  display: inline-block;
+  margin-left: 10px;
+}
+.price-range form {
+  display: flex;
+  align-items: center;
 }
