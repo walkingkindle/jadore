@@ -1,8 +1,10 @@
-.product-container {
+main {
   width: 100%;
   max-width: 130rem;
   margin: 0 auto;
+}
 
+.product-container {
   display: grid;
   gap: 5rem;
   grid-template-columns: repeat(2, 1fr);
@@ -76,4 +78,75 @@ input[type='radio']:checked + label:before {
   font-size: 2rem !important;
   padding: 0.5rem 1.5rem;
   border: 1px solid black;
+  border-radius: 5px;
+}
+
+/* description */
+.description {
+  padding: 2rem;
+}
+
+.description ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  padding-left: 0rem;
+}
+.description ul li {
+  font-size: 1.6rem;
+}
+/* reviews */
+.reviews {
+  padding: 2rem;
+}
+.review-count {
+  display: flex;
+  gap: 1rem;
+}
+.review-count p {
+  font-size: 1.6rem;
+}
+
+.review-comment {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 2rem 0rem;
+}
+.review-comment a {
+  padding: 1rem 3rem;
+  border: 1px solid black;
+  font-size: 1.6rem;
+}
+/* comment submission */
+.comment-submission--container {
+  padding: 2rem;
+  width: 100%;
+  max-width: 32rem;
+}
+.comment-submission--container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.comment-form input[type='text'],
+.comment-form textarea {
+  padding: 1rem;
+  font-size: 1.6rem;
+}
+.comment-form input[type='submit'] {
+  width: 100%;
+  max-width: 16rem;
+  padding: 1rem;
+  font-size: 1.6rem;
+}
+.comment-form--rating {
+  display: flex;
+  gap: 1rem;
+}
+.comment-form--rating label {
+  font-size: 1.6rem;
+}
+
+.comment-form--rating input[type='radio'] {
+  display: block;
 }

@@ -49,6 +49,7 @@ main {
 .categories {
   border: 0.5px solid black;
   padding: 1rem;
+  border-bottom: none;
 }
 
 /* price-range */
@@ -66,12 +67,6 @@ main {
 }
 .price-range form input {
   width: 25rem;
-}
-
-.brends,
-.aroma,
-.quantity {
-  border-bottom: none;
 }
 
 /* store-products */
@@ -149,4 +144,22 @@ main {
 .price-range form {
   display: flex;
   align-items: center;
+}
+
+/* right-side additional */
+.store-right--side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.store-right--side .pagination {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 1rem;
+}
+.pagination a {
+  border: 1px solid black;
+  font-size: 1.6rem;
+  padding: 0rem 1rem;
+  border-radius: 50%;
 }

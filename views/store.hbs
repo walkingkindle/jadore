@@ -21,8 +21,8 @@
    <h1 class="store-title">Full size vials</h2>
  <main>
   <div class="store-options">
-    <div class="brends categories">
-      <button>Brends</button>
+    <div class="categories">
+      <button class="brends">Brends</button>
       <form class="grid-style brend-categories">
         <div>
         <input type="checkbox" name="jadore" id="jadore" >
@@ -51,8 +51,8 @@
       </form>
     </div>
     {{!-- x --}}
-     <div class="aroma categories">
-      <button>Aroma</button>
+     <div class="categories">
+      <button class="aroma">Aroma</button>
       <form class="grid-style aroma-categories">
         <div>
         <input type="checkbox" name="jadore" id="jadore">
@@ -81,8 +81,8 @@
       </form>
     </div>
     {{!-- x --}}
-     <div class="quantity categories">
-      <button>Quantity</button>
+     <div class="categories">
+      <button class="quantity">Quantity</button>
       <form class="grid-style quantity-categories">
         <div>
         <input type="checkbox" name="jadore" id="jadore">
@@ -111,8 +111,8 @@
       </form>
     </div>
     {{!-- x --}}
-     <div class="price-range">
-      <button>Price</button>
+     <div class="price-range categories">
+      <button class="price-range--button">Price</button>
       <form class="price-categories">
         <input type="range" id="price" class="range-slider" name="price" min="0" max="100" value="0">
         <span class="range-value">0</span>
@@ -121,7 +121,9 @@
   </div>
 
   {{!-- OVAJ MARKUP PREDSTAVLJA JEDAN PROIZVOD --}}
-  <div class="store-products">
+  <div class="store-right--side">
+
+   <div class="store-products">
     {{!-- x --}}
     {{#each perfumeData}}
     
@@ -141,8 +143,19 @@
     </div>  
     {{/each}}
    </div>
+     <div class="pagination">
+    <a href="/newpage">1</a>
   </div>
+  </div>
+
+
+ 
  </main>
+
+
+
+     
+ 
 
 {{> footer}}
  <script

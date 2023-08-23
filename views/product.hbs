@@ -28,9 +28,11 @@
                 </strong>
                 <p>In stock</p>
               </div>
+              {{!-- article number --}}
               <div class="p-info--two">
                 <p>Article: 0372</p>
               </div>
+              {{!-- quantity options --}}
               <div class="p-info--three">
                  <form>
                 <input type="radio" name="volume" value="3ml" id="3ml">
@@ -52,16 +54,68 @@
               <label for="30ml">30ml</label>
             </form>
               </div>
+              {{!-- price and pay button --}}
               <div class="p-info--four">
                 <p class="p-info--four--price">30$</p>
                 <a href="#" class="p-info--four--buy">Buy</a>
               </div>
           </div>
         </div>
+        {{!--description  --}}
+        <div class="description">
+            <strong>Description</strong>
+             <ul>
+              <li>ingredient-1</li>
+              <li>ingredient-2</li>
+             </ul>       
+             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse, asperiores natus error quaerat quisquam officiis nostrum atque ullam ad omnis accusantium molestiae excepturi qui aliquid voluptas! Temporibus perspiciatis excepturi quaerat.</p>    
+        </div>
+        {{!-- reviews --}}
+        <div class="reviews">
+          <div class="review-count">
+          <h2>REVIEWS</h2>
+          <p>(0)</p>
+          </div>
+          <div class="review-comment">
+            <a href="#comment-submission-id" class="review-form--button">Add a review</a>
+            <div class="review-comment--container">
+              {{!-- <p> neka ovde budu komentari</p> --}}
+            </div>
+          </div>
+        </div>
 
 
-      </main>
-      {{!-- endmain --}}
+
+   {{!-- start comment form --}}
+      <div class='comment-submission--container' id="comment-submission-id">
+    <h2>Submit a comment</h2>
+    <form action='' method='post' class="comment-form">
+      <label for='name'></label>
+      <input type='text' name='name' placeholder="Name" required />
+        
+                <label for='comment'></label>
+                <textarea
+                  name='comment'
+                  id=''
+                  rows='10'
+                  placeholder='Your review'
+                  class='comment'
+                ></textarea>
+      <div class="comment-form--rating">
+        <label for="star-one">Rating</label>
+        <input type="radio" value="star-one"  name="rating">
+       <input type="radio" value="star-two"  name="rating">
+      <input type="radio" value="star-three" name="rating">
+     <input type="radio" value="star-four" name="rating">
+      <input type="radio" value="star-five" name="rating">
+      </div>
+      <input type='submit' value='Post a review' />
+    </form>
+  </div>
+    {{!-- end comment form --}}
+
+          </main>
+    {{!-- endmain --}}
   {{> footer}}
  <script
       type='module'
