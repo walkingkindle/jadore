@@ -20,17 +20,17 @@
       {{!-- main --}}
       <main>
         <div class="product-container">
-          <img src="/images/perfumes/image-1.jpg" alt="a perfume">
+          <img src="{{perfumeData.Image}}" alt="a perfume">
           <div class="product-info">
               <div class="p-info--one">
                 <strong>
-                  Jadore Perfume
+                 {{perfumeData.Name}} 
                 </strong>
                 <p>In stock</p>
               </div>
               {{!-- article number --}}
               <div class="p-info--two">
-                <p>Article: 0372</p>
+                <p>Article: {{perfumeData.Id}}</p>
               </div>
               {{!-- quantity options --}}
               <div class="p-info--three">
@@ -68,7 +68,7 @@
               <li>ingredient-1</li>
               <li>ingredient-2</li>
              </ul>       
-             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse, asperiores natus error quaerat quisquam officiis nostrum atque ullam ad omnis accusantium molestiae excepturi qui aliquid voluptas! Temporibus perspiciatis excepturi quaerat.</p>    
+             <p>{{perfumeData.Description}}</p>
         </div>
         {{!-- reviews --}}
         <div class="reviews">

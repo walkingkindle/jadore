@@ -24,12 +24,5 @@ export class AppController {
   getStore(@Response() res) {
     return res.redirect('/store/storemain');
   }
-  @Get('/product')
-  @Render('product')
-  getProduct() {
-    const data = {
-      title: 'Contact Page',
-    };
-    return data;
-  }
+  
 }

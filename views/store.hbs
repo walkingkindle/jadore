@@ -128,11 +128,11 @@
     {{#each perfumeData}}
     
      <div class="store-product">
-       <a href="/product">
+       <a href="/store/product/{{this.id}}">
       <img src={{this.ImageUrl}} alt="perfume">
       </a>
       <div>
-        <a href="/product">
+        <a href="/store/product/{{this.id}}">
         <p>{{this.Name}}</p>
         </a>
         <select name="quantity" id="">

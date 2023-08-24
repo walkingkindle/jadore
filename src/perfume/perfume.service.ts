@@ -39,15 +39,12 @@ export class PerfumeService {
         }
         try{
             const response = await axios.get(`http://127.0.0.1:1337/api/perfumes/${id}?populate=*`,config);
-            console.log("dataIs", response.data);
-            console.log(response.data.data.id)
-
             const singlePerfume:PerfumeResponse = {
                 Id : response.data.data.id,
                 Name: response.data.data.attributes.Name,
                 Description: response.data.data.attributes.Description,
                 Price: response.data.data.attributes.Price,
-                Image:response.data.data.attributes.Image.data[0].attributes.formats.large.url,
+                Image:response.data.data.attributes.ImageUrl,
             }
            return singlePerfume 
         }catch(error){
