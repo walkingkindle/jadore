@@ -56,7 +56,7 @@
               </div>
               {{!-- price and pay button --}}
               <div class="p-info--four">
-                <p class="p-info--four--price">30$</p>
+                <p class="p-info--four--price">{{perfumeData.Price}}</p>
                 <a href="#" class="p-info--four--buy">Buy</a>
               </div>
           </div>
@@ -89,25 +89,25 @@
    {{!-- start comment form --}}
       <div class='comment-submission--container' id="comment-submission-id">
     <h2>Submit a comment</h2>
-    <form action='' method='post' class="comment-form">
+    <form action='/store/comment' method='post' class="comment-form">
       <label for='name'></label>
       <input type='text' name='name' placeholder="Name" required />
-        
                 <label for='comment'></label>
                 <textarea
-                  name='comment'
+                  name='review'
                   id=''
                   rows='10'
                   placeholder='Your review'
                   class='comment'
                 ></textarea>
+      <input type="hidden" name="id" value="{{perfumeData.Id}}">
       <div class="comment-form--rating">
         <label for="star-one">Rating</label>
-        <input type="radio" value="star-one"  name="rating">
-       <input type="radio" value="star-two"  name="rating">
-      <input type="radio" value="star-three" name="rating">
-     <input type="radio" value="star-four" name="rating">
-      <input type="radio" value="star-five" name="rating">
+        <input type="radio" value="1"  name="rating">
+       <input type="radio" value="2"  name="rating">
+      <input type="radio" value="3" name="rating">
+     <input type="radio" value="4" name="rating">
+      <input type="radio" value="5" name="rating">
       </div>
       <input type='submit' value='Post a review' />
     </form>

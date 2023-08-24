@@ -26,3 +26,10 @@ model GoogleUser{
   email String @unique
   accessToken String
 }
+
+model Comment{
+  id Int @default (autoincrement()) @unique
+  Name String
+  Review String
+  Rating Int
+}

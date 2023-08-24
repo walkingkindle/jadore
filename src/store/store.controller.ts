@@ -1,4 +1,4 @@
-import { Controller, Get,Response,Render, Param } from '@nestjs/common';
+import { Request,Controller, Get,Response,Render, Param, Post} from '@nestjs/common';
 import { StoreService } from './store.service';
 
 @Controller('store')
@@ -16,5 +16,13 @@ export class StoreController {
     async getSingleProduct(@Param("id") id:string,@Response() res){
         const perfumeData = await this.storeService.getOneProduct(id)
         return {perfumeData}
+    }
+
+    @Post("/comment")
+    async postNewComment(@Request() req, @Response() res){
+        const {name,review,rating,id} = req.body
+        const newComment = await this.storeService.addNewComment(name,review,rating)
+        console.log("id is",id)
+        return res.redirect(`/store/product/${id}`)
     }
 }
