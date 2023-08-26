@@ -29,8 +29,8 @@ export class StoreController {
   async getSingleProduct(@Param('id') id: string, @Response() res) {
     console.log('id is ' + id);
     const perfumeData = await this.storeService.getOneProduct(id);
-    const comments = await this.storeService.findCommentsByProductId(id)
-    return { perfumeData,comments };
+    const comments = await this.storeService.findCommentsByProductId(id);
+    return { perfumeData, comments };
   }
 
   @Post('/comment')
@@ -42,6 +42,11 @@ export class StoreController {
       rating,
       id,
     );
-    return res.redirect(`/store/product/${id}`);
+
+    const someVariable = 'Your review was submitted successfully!';
+    const padding = '5rem';
+
+    // Pass the variable to the template
+    res.redirect(`/store/product/${id}?var=${someVariable}&padding=${padding}`);
   }
 }

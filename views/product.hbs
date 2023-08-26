@@ -13,8 +13,8 @@
   </head>
   <body>
       {{!-- log in - message --}}
-      <div class="log-in--container">
-      <p class="log-in--message" style="{{stil}}" >{{logMessage}}</p>
+      <div class="log-in--container" id="customContainer">
+      <p class="log-in--message" id="variableMessage">{{someVariable}}</p>
       </div>
       {{> nav}}
       {{!-- main --}}
@@ -71,7 +71,7 @@
              <p>{{perfumeData.Description}}</p>
         </div>
         {{!-- reviews --}}
-        {{#each comments}}
+       
         <div class="reviews">
           <div class="review-count">
           <h2>REVIEWS</h2>
@@ -80,16 +80,18 @@
           <div class="review-comment">
             <a href="#comment-submission-id" class="review-form--button">Add a review</a>
             <div class="review-comment--container">
+               {{#each comments}}
               {{!-- <p> neka ovde budu komentari</p> --}}
-              <div class="unique-review--comment">
-                <p>{{this.Name}}<span>26.8.2023</span></p>
+              <div class="unique-review--comment" style="border-bottom: 1px solid black; padding: 2px">
+                <p>{{this.Name}} <span>26.8.2023</span></p>
                 <p>{{this.Rating}} stars</p>
                 <p>{{this.Review}}</p>
              </div>
+              {{/each}}
             </div>
           </div>
         </div>
-        {{/each}}
+       
 {{!-- start comment form --}}
       <div class='comment-submission--container' id="comment-submission-id">
     <h2>Submit a comment</h2>
@@ -121,6 +123,20 @@
           </main>
     {{!-- endmain --}}
   {{> footer}}
+<script>
+  // Get the query parameter values from the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const someVariable = urlParams.get('var');
+  const padding = urlParams.get('padding');
+  
+
+  // Apply the padding value to the container's style
+  const container = document.getElementById('customContainer');
+  container.style.padding = padding;
+
+  // Set the value to the HTML element
+  document.getElementById('variableMessage').textContent = someVariable;
+</script>
  <script
       type='module'
       src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'
