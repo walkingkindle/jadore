@@ -9,10 +9,11 @@ import {
   Post,
 } from '@nestjs/common';
 import { StoreService } from './store.service';
+import { PrismaService } from 'prisma/prisma.service';
 
 @Controller('store')
 export class StoreController {
-  constructor(private readonly storeService: StoreService) {}
+  constructor(private readonly storeService: StoreService, private readonly prisma:PrismaService) {}
   @Get('/storemain')
   @Render('store')
   async GetStoreMain(@Response() res) {
@@ -24,7 +25,8 @@ export class StoreController {
   @Render('product')
   async getSingleProduct(@Param('id') id: string, @Response() res) {
     const perfumeData = await this.storeService.getOneProduct(id);
-    return { perfumeData };
+    const comments = await this.storeService.findCommentsByProductId(id)
+    return { perfumeData,comments };
   }
 
   @Post('/comment')
@@ -34,8 +36,8 @@ export class StoreController {
       name,
       review,
       rating,
+      id
     );
-    console.log('id is', id);
     return res.redirect(`/store/product/${id}`);
   }
 }

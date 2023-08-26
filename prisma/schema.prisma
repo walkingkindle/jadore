@@ -32,4 +32,6 @@ model Comment{
   Name String
   Review String
   Rating Int
+  ForProductId String 
+  Date_Added String? 
 }
