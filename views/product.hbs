@@ -71,6 +71,7 @@
              <p>{{perfumeData.Description}}</p>
         </div>
         {{!-- reviews --}}
+        {{#each comments}}
         <div class="reviews">
           <div class="review-count">
           <h2>REVIEWS</h2>
@@ -81,17 +82,15 @@
             <div class="review-comment--container">
               {{!-- <p> neka ovde budu komentari</p> --}}
               <div class="unique-review--comment">
-                <p>User <span>26.8.2023</span></p>
-                <p>5 stars</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus iste odit itaque voluptate inventore dignissimos eaque excepturi error alias ratione, vel consequatur hic soluta incidunt aliquid pariatur qui? Atque, expedita.</p>
-              </div>
+                <p>{{this.Name}}<span>26.8.2023</span></p>
+                <p>{{this.Rating}} stars</p>
+                <p>{{this.Review}}</p>
+             </div>
             </div>
           </div>
         </div>
-
-
-
-   {{!-- start comment form --}}
+        {{/each}}
+{{!-- start comment form --}}
       <div class='comment-submission--container' id="comment-submission-id">
     <h2>Submit a comment</h2>
     <form action='/store/comment' method='post' class="comment-form">
