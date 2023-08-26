@@ -23,7 +23,9 @@ export class StoreController {
   @Get('/product/:id')
   @Render('product')
   async getSingleProduct(@Param('id') id: string, @Response() res) {
+    console.log('id is ' + id);
     const perfumeData = await this.storeService.getOneProduct(id);
+
     return { perfumeData };
   }
 
@@ -35,7 +37,9 @@ export class StoreController {
       review,
       rating,
     );
+    const stil = 'padding: 5rem;';
+    const logMessage = 'Check your email for confirmation code!';
     console.log('id is', id);
-    return res.redirect(`/store/product/${id}`);
+    return res.redirect(`/store/product/${id}`, [logMessage, stil]);
   }
 }
