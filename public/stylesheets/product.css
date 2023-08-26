@@ -150,3 +150,8 @@ input[type='radio']:checked + label:before {
 .comment-form--rating input[type='radio'] {
   display: block;
 }
+.unique-review--comment {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
