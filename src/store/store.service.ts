@@ -23,6 +23,7 @@ export class StoreService {
   async getOneProduct(id: string): Promise<PerfumeResponse> {
     try {
       const perfume = await this.perfumeService.fetchPerfumeById(id);
+      console.log(perfume)
       return perfume;
     } catch (error) {
       console.error('Error parsing perfume', error); //error here

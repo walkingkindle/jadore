@@ -10,6 +10,7 @@ export interface PerfumeResponse {
     Price:Number,
     Description:String,
     Image:String,
+    PriceMultiplier:Number
 
 }
 @Injectable()
@@ -45,6 +46,7 @@ export class PerfumeService {
                 Description: response.data.data.attributes.Description,
                 Price: response.data.data.attributes.Price,
                 Image:response.data.data.attributes.ImageUrl,
+                PriceMultiplier:response.data.data.attributes.Pricemultiplier
             }
            return singlePerfume 
         }catch(error){

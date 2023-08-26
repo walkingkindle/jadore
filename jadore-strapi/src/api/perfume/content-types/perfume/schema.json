@@ -29,6 +29,9 @@
     },
     "ImageUrl": {
       "type": "string"
+    },
+    "Pricemultiplier": {
+      "type": "float"
     }
   }
 }
