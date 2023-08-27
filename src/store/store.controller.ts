@@ -7,6 +7,7 @@ import {
   Render,
   Param,
   Post,
+  Res,
 } from '@nestjs/common';
 import { StoreService } from './store.service';
 import { PrismaService } from 'prisma/prisma.service';
@@ -22,15 +23,35 @@ export class StoreController {
   @Render('store')
   async GetStoreMain(@Response() res) {
     const perfumeData = await this.storeService.getAllProducts();
+    console.log(perfumeData)
     return { perfumeData };
   }
 
   @Get("/brand/:brand")
   @Render("store")
   async getStoreFilter(@Response() res, @Param("brand") brand:string){
-    const perfumeData = await this.storeService.getProductsByBrand(brand)
-    console.log(perfumeData)
+    const perfumeData = await this.storeService.getProductsByBrand('Brand',brand)
     if (!perfumeData){
+      return res.redirect("/")
+    }
+    return {perfumeData}
+  }
+  @Get("/aroma/:aroma")
+  @Render("store")
+  async getStoreFilterAroma(@Response() res, @Param("aroma") aroma:string){
+    const perfumeData = await this.storeService.getProductsByBrand('Aroma',aroma)
+    if(!perfumeData){
+      return res.redirect("/")
+    }
+    return {perfumeData}
+  }
+
+
+  @Get("/quantity/:number")
+  @Render("store")
+  async getStoreFilterQuantity(@Response() res, @Param("number") number:string){
+    const perfumeData = await this.storeService.getProductsByBrand("Quantity",number)
+    if(!perfumeData){
       return res.redirect("/")
     }
     return {perfumeData}
