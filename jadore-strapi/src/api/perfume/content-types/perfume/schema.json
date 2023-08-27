@@ -27,7 +27,7 @@
       "type": "uid",
       "targetField": "Name"
     },
-    "ImageUrl": {
+    "Image": {
       "type": "string"
     },
     "Pricemultiplier": {

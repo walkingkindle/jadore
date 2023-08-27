@@ -41,7 +41,7 @@ async formatStrapiResponse(response):Promise<PerfumeResponse>{
     Name: response.attributes.Name,
     Description: response.attributes.Description,
     Price: response.attributes.Price,
-    Image:response.attributes.ImageUrl,
+    Image:response.attributes.Image,
     PriceMultiplier:response.attributes.Pricemultiplier
  }
  return singlePerfume
@@ -59,8 +59,8 @@ async formatStrapiResponse(response):Promise<PerfumeResponse>{
     }
 
 
-    async fetchPerfumeByBrand(brand: string): Promise<PerfumeResponse[]> {
-      const response = await axios.get(`http://127.0.0.1:1337/api/perfumes?filters[Brand][$eq]=${brand}`, config);
+    async fetchPerfumeByBrand(type: string,query:string): Promise<PerfumeResponse[]> {
+      const response = await axios.get(`http://127.0.0.1:1337/api/perfumes?filters[${type}][$eq]=${query}`, config);
       const perfumes = response.data.data;
       
       const formattedPerfumes = await Promise.all(perfumes.map(async (perfume) => {

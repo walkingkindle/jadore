@@ -68,11 +68,10 @@ export class StoreService {
   }
 
 
-  async getProductsByBrand(brand:string){
-    const perfumes = await this.perfumeService.fetchPerfumeByBrand(brand)
+  async getProductsByBrand(type:string,brand:string){
+    const perfumes = await this.perfumeService.fetchPerfumeByBrand(type,brand)
     return perfumes
   }
-
 
 }
 
