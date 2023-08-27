@@ -25,28 +25,35 @@
       <button class="brends">Brends</button>
       <form class="grid-style brend-categories">
         <div>
-        <input type="checkbox" name="brand" id="jadore" value="Gucci" >
-        <a href="/store/brand/Gucci">Gucci</a>
+        <a href="/store/brand/Gucci" id="gucci-link"></a>
+        <input type="checkbox" name="brand" id="gucci-checkbox" value="Gucci" >
+        <label for="brand">Gucci</label>
         </div>
    <div>
-        <input type="checkbox" name="brand" id="jadore" class="test-box" value="Dior">
-        <a href="/store/brand/Dior">Dior</a>
+        <a href="/store/brand/Dior" id="dior-link"></a>
+        <input type="checkbox" name="dior" id="dior-checkbox" class="test-box" value="Dior">
+        <label for="dior">Dior</label>
+        
         </div>
            <div>
-        <input type="checkbox" name="brand" id="jadore" value="Channel">
-        <a href="/store/brand/Channel">Channel</a>
+             <a href="/store/brand/Channel" id="channel-link"></a>
+        <input type="checkbox" name="channel" id="channel-checkbox" value="Channel">
+          <label for="channel">Channel</label>
         </div>
            <div>
-        <input type="checkbox" name="brand" id="jadore" value="Lanvin">
-        <a href="/store/brand/Lanvin">Lanvin</a>
+        <input type="checkbox" name="Lanvin" id="lanvin-checkbox" value="Lanvin">
+        <label for="Lanvin">Lanvin</label>
+        <a href="/store/brand/Lanvin" id="lanvin-link"></a>
         </div>
            <div>
-        <input type="checkbox" name="brand" id="jadore" value="Calvin Klein">
-        <a href="/store/brand/Calvin Klein">Calvin Klein</a>
+        <input type="checkbox" name="calvin" id="calvin-checkbox" value="Calvin Klein">
+        <label for="calvin">Calvin Klein</label>
+        <a href="/store/brand/Calvin Klein" id="calvin-link"></a>
         </div>
            <div>
-        <input type="checkbox" name="brand" id="jadore" value="Armani">
-        <a href="/store/brand/Armani">Armani</a>
+        <input type="checkbox" name="armani" id="armani-checkbox" value="Armani">
+        <label for="armani">Armani</label>
+        <a href="/store/brand/Armani" id="armani-link"></a>
         </div>
       </form>
     </div>
@@ -129,7 +136,7 @@
     
      <div class="store-product">
        <a href="/store/product/{{this.id}}">
-      <img src={{this.Image}} alt="perfume">
+      <img src={{this.ImageUrl}} alt="{{this.Name}}">
       </a>
       <div>
         <a href="/store/product/{{this.id}}">
@@ -169,5 +176,6 @@
       <script src="/scripts/register.js"></script>
     <script src="/scripts/nav.js"></script>
     <script src="/scripts/store.js"></script>
+   
   </body>
 
