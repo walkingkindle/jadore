@@ -20,7 +20,7 @@
       {{!-- main --}}
       <main>
         <div class="product-container">
-          <img src="{{perfumeData.Image}}" alt="a perfume">
+          <img src="{{perfumeData.Image}}" alt="{{perfumeData.Name}}">
           <div class="product-info">
               <div class="p-info--one">
                 <strong>
@@ -35,29 +35,32 @@
               {{!-- quantity options --}}
               <div class="p-info--three">
                  <form>
-                <input type="radio" name="volume" value="3ml" id="3ml">
-                 <label for="3ml">3ml</label>
+                  <input type="radio" name="volume" value="1" id="one-ml" class="volume-radio">
+                 <label for="one-ml">1ml</label>
 
-               <input type="radio" name="volume" value="5ml" id="5ml">
-               <label for="5ml">5ml</label>
+                <input type="radio" name="volume" value="3" id="three-ml" class="volume-radio">
+                 <label for="three-ml">3ml</label>
 
-               <input type="radio" name="volume" value="10ml" id="10ml">
-               <label for="10ml">10ml</label>
+               <input type="radio" name="volume" value="5" id="five-ml" class="volume-radio">
+               <label for="five-ml">5ml</label>
 
-               <input type="radio" name="volume" value="15ml" id="15ml">
-                <label for="15ml">15ml</label>
+               <input type="radio" name="volume" value="10" id="ten-ml" class="volume-radio">
+               <label for="ten-ml">10ml</label>
 
-               <input type="radio" name="volume" value="20ml" id="20ml">
-               <label for="20ml">20ml</label>
+               <input type="radio" name="volume" value="15" id="fifteen-ml" class="volume-radio">
+                <label for="fifteen-ml">15ml</label>
 
-               <input type="radio" name="volume" value="30ml" id="30ml">
-              <label for="30ml">30ml</label>
+               <input type="radio" name="volume" value="20" id="twenty-ml" class="volume-radio">
+               <label for="twenty-ml">20ml</label>
+
+               <input type="radio" name="volume" value="30" id="thirty-ml" class="volume-radio">
+              <label for="thirty-ml">30ml</label>
             </form>
               </div>
               {{!-- price and pay button --}}
               <div class="p-info--four">
-                <p class="p-info--four--price">{{perfumeData.Price}}</p>
-                <a href="#" class="p-info--four--buy">Buy</a>
+               <p class="p-info--four--price">{{perfumeData.Price}}</p>
+              <a href="#" class="p-info--four--buy">Buy</a>
               </div>
           </div>
         </div>
@@ -147,4 +150,9 @@
     ></script>
       <script src="/scripts/register.js"></script>
     <script src="/scripts/nav.js"></script>
+    <script>
+      const defaultPrice = {{perfumeData.Price}};
+    </script>
+     <script src="/scripts/product.js"></script>
+
   </body>
