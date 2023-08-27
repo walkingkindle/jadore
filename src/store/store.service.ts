@@ -1,16 +1,19 @@
 /* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
 import { PrismaClient, Prisma, User } from '@prisma/client';
+import axios from 'axios';
 import { PrismaService } from 'prisma/prisma.service';
 import { PerfumeService, PerfumeResponse } from 'src/perfume/perfume.service';
 
+
+
+const authToken = process.env.STRAPI_API_TOKEN
 @Injectable()
 export class StoreService {
   constructor(
     private readonly perfumeService: PerfumeService,
     private readonly prisma: PrismaService,
   ) {}
-
   async getAllProducts() {
     const perfumeData = await this.perfumeService.fetchPerfumes();
     const formattedPerfumeData = perfumeData.data.map((item) => ({
@@ -63,6 +66,14 @@ export class StoreService {
     })
     return comments
   }
+
+
+  async getProductsByBrand(brand:string){
+    const perfumes = await this.perfumeService.fetchPerfumeByBrand(brand)
+    return perfumes
+  }
+
+
 }
 
 // ctrl + z -> backup

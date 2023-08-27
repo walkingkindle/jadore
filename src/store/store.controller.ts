@@ -17,6 +17,7 @@ export class StoreController {
     private readonly storeService: StoreService,
     private readonly prisma: PrismaService,
   ) {}
+
   @Get('/storemain')
   @Render('store')
   async GetStoreMain(@Response() res) {
@@ -24,10 +25,20 @@ export class StoreController {
     return { perfumeData };
   }
 
+  @Get("/brand/:brand")
+  @Render("store")
+  async getStoreFilter(@Response() res, @Param("brand") brand:string){
+    const perfumeData = await this.storeService.getProductsByBrand(brand)
+    console.log(perfumeData)
+    if (!perfumeData){
+      return res.redirect("/")
+    }
+    return {perfumeData}
+  }
+
   @Get('/product/:id')
   @Render('product')
   async getSingleProduct(@Param('id') id: string, @Response() res) {
-    console.log('id is ' + id);
     const perfumeData = await this.storeService.getOneProduct(id);
     const comments = await this.storeService.findCommentsByProductId(id);
     return { perfumeData, comments };
@@ -45,8 +56,6 @@ export class StoreController {
 
     const someVariable = 'Your review was submitted successfully!';
     const padding = '5rem';
-
-    // Pass the variable to the template
     res.redirect(`/store/product/${id}?var=${someVariable}&padding=${padding}`);
   }
 }

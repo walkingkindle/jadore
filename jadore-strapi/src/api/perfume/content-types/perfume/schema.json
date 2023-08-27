@@ -32,6 +32,15 @@
     },
     "Pricemultiplier": {
       "type": "float"
+    },
+    "Brand": {
+      "type": "string"
+    },
+    "Aroma": {
+      "type": "string"
+    },
+    "Quantity": {
+      "type": "integer"
     }
   }
 }

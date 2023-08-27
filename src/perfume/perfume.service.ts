@@ -4,7 +4,11 @@ import { Injectable } from '@nestjs/common';
 import axios from 'axios';
 import { UnorderedBulkOperation } from 'typeorm';
 const API_TOKEN = process.env.STRAPI_API_TOKEN;
-
+const config = {
+  headers: {
+    Authorziation: `Bearer ${API_TOKEN}`,
+  },
+};
 export interface PerfumeResponse {
     Id:String,
     Name:String,
@@ -17,11 +21,7 @@ export interface PerfumeResponse {
 @Injectable()
 export class PerfumeService {
   async fetchPerfumes() {
-    const config = {
-      headers: {
-        Authorziation: `Bearer ${API_TOKEN}`,
-      },
-    };
+
     try {
       const response = await axios.get(
         'http://127.0.0.1:1337/api/perfumes?populates=true',
@@ -34,26 +34,40 @@ export class PerfumeService {
     }
 }
 
+
+async formatStrapiResponse(response):Promise<PerfumeResponse>{
+  const singlePerfume:PerfumeResponse = {
+    Id : response.id,
+    Name: response.attributes.Name,
+    Description: response.attributes.Description,
+    Price: response.attributes.Price,
+    Image:response.attributes.ImageUrl,
+    PriceMultiplier:response.attributes.Pricemultiplier
+ }
+ return singlePerfume
+}
+
     async fetchPerfumeById(id:string):Promise<PerfumeResponse>{
-        const config = {
-            headers:{
-                Authorization:`Bearer ${API_TOKEN}`
-            },
-        }
         try{
             const response = await axios.get(`http://127.0.0.1:1337/api/perfumes/${id}?populate=*`,config);
-            const singlePerfume:PerfumeResponse = {
-                Id : response.data.data.id,
-                Name: response.data.data.attributes.Name,
-                Description: response.data.data.attributes.Description,
-                Price: response.data.data.attributes.Price,
-                Image:response.data.data.attributes.ImageUrl,
-                PriceMultiplier:response.data.data.attributes.Pricemultiplier
-            }
+            const singlePerfume = this.formatStrapiResponse(response.data.data)
            return singlePerfume 
         }catch(error){
             console.error('Error fetching perfumes',error)
             return undefined
         }
     }
+
+
+    async fetchPerfumeByBrand(brand: string): Promise<PerfumeResponse[]> {
+      const response = await axios.get(`http://127.0.0.1:1337/api/perfumes?filters[Brand][$eq]=${brand}`, config);
+      const perfumes = response.data.data;
+      
+      const formattedPerfumes = await Promise.all(perfumes.map(async (perfume) => {
+        return this.formatStrapiResponse(perfume);
+      }));
+      
+      return formattedPerfumes;
+    }
+    
   }
