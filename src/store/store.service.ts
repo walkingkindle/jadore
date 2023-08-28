@@ -72,7 +72,40 @@ export class StoreService {
     const perfumes = await this.perfumeService.fetchPerfumeByBrand(type,brand)
     return perfumes
   }
+  
 
+  async getProductsByFilters(selectedAromas:string[],selectedBrands:string[],selectedQuantity:string[]):Promise<PerfumeResponse[]>{
+    let api_call = 'http://127.0.0.1:1337/api/perfumes?filters'
+    if (selectedBrands){
+    for(let i = 0; i < selectedBrands.length; i++ ){
+        if(selectedBrands.length > 0){
+          api_call += `[Brand][$eq]=${selectedBrands[i]}`
+        }
+    }
+    console.log(api_call)
+    }
+    if(selectedAromas){
+    for(let j = 0; j < selectedAromas.length; j++){
+      if(selectedAromas.length > 0){
+        api_call += `&filters[Aroma][$eq]=${selectedAromas[j]}`
+      }
+    }
+    console.log("api key at the second step")
+    }
+    if (selectedQuantity){
+    for(let k = 0; k< selectedQuantity.length; k++){
+      if(selectedQuantity.length > 0){
+        api_call += `&filters[Quantity][$eq]=${selectedQuantity[k]}`
+      }
+    }
+  }
+    console.log("final api call",api_call)
+
+    const perfumes = await this.perfumeService.fetchWithApiCall(api_call)
+
+    return perfumes
+
+  }
 }
 
 // ctrl + z -> backup

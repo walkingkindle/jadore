@@ -21,40 +21,34 @@
    <h1 class="store-title">Full size vials</h2>
  <main>
   <div class="store-options">
-    <form action="" method="post"> {{!-- OVO JE FORMA ZA FILTRIRANJE KATEGORIJA!!! --}}
+    <form action="/store/filter" method="post"> 
       <div class="categories">
       <button class="brends">Brends</button>
       <div class="grid-style brend-categories">
         <div>
-        <a href="/store/brand/Gucci" id="gucci-link"></a>
-        <input type="checkbox" name="brand" id="gucci-checkbox" value="Gucci" >
+        <input type="checkbox" name="brand[]" id="gucci-checkbox" value="Gucci" >
         <label for="brand">Gucci</label>
         </div>
    <div>
-        <a href="/store/brand/Dior" id="dior-link"></a>
-        <input type="checkbox" name="dior" id="dior-checkbox" class="test-box" value="Dior">
+        <input type="checkbox" name="brand[]" id="dior-checkbox" class="test-box" value="Dior">
         <label for="dior">Dior</label>
         
         </div>
            <div>
-             <a href="/store/brand/Channel" id="channel-link"></a>
-        <input type="checkbox" name="channel" id="channel-checkbox" value="Channel">
+        <input type="checkbox" name="brand[]" id="channel-checkbox" value="Channel">
           <label for="channel">Channel</label>
         </div>
            <div>
-        <input type="checkbox" name="Lanvin" id="lanvin-checkbox" value="Lanvin">
+        <input type="checkbox" name="brand[]" id="lanvin-checkbox" value="Lanvin">
         <label for="Lanvin">Lanvin</label>
-        <a href="/store/brand/Lanvin" id="lanvin-link"></a>
         </div>
            <div>
-        <input type="checkbox" name="calvin" id="calvin-checkbox" value="Calvin Klein">
+        <input type="checkbox" name="brand[]" id="calvin-checkbox" value="Calvin Klein">
         <label for="calvin">Calvin Klein</label>
-        <a href="/store/brand/Calvin Klein" id="calvin-link"></a>
         </div>
            <div>
-        <input type="checkbox" name="armani" id="armani-checkbox" value="Armani">
+        <input type="checkbox" name="brand[]" id="armani-checkbox" value="Brand-Armani">
         <label for="armani">Armani</label>
-        <a href="/store/brand/Armani" id="armani-link"></a>
         </div>
       </div>
     </div>
@@ -63,28 +57,29 @@
       <button class="aroma">Aroma</button>
       <div class="grid-style aroma-categories">
         <div>
-        <input type="checkbox" name="aroma" id="jadore" value="Warm">
-        <a href="/store/aroma/Warm">Warm</a>
+        <input type="checkbox" name="aroma[]" id="jadore" value="Warm">
+        <label>Warm</label>
         </div>
    <div>
-        <input type="checkbox" name="aroma" id="jadore" value="Woody">
-        <a href="/store/aroma/Woody">Woody</a>
+        <input type="checkbox" name="aroma[]" id="jadore" value="Woody">
+        <label>Woody</label>
         </div>
            <div>
-        <input type="checkbox" name="aroma" id="jadore" value="Oriental">
-        <a href="/store/aroma/Oriental">Oriental</a>
+        <input type="checkbox" name="aroma[]" id="jadore" value="Oriental">
+
+        <label>Oriental</label>
         </div>
            <div>
-        <input type="checkbox" name="aroma" id="jadore" value="Summer">
-        <a href="/store/aroma/Summer">Summer</a>
+        <input type="checkbox" name="aroma[]" id="jadore" value="Summer">
+        <label>Summer</label>
         </div>
            <div>
-        <input type="checkbox" name="aroma" id="jadore" value="Winter">
-        <a href="/store/aroma/Winter">Winter</a>
+        <input type="checkbox" name="aroma[]" id="jadore" value="Winter">
+        <label>Winter</label>
         </div>
            <div>
-        <input type="checkbox" name="aroma" id="jadore" value="Nice">
-        <a href="/store/aroma/Nice">Nice</a>
+        <input type="checkbox" name="aroma[]" id="jadore" value="Nice">
+        <label>Nice</label>
         </div>
       </div>
     </div>
@@ -93,30 +88,29 @@
       <button class="quantity">Quantity</button>
       <div class="grid-style quantity-categories">
         <div>
-        <input type="checkbox" name="quanitity" id="jadore" value="1">
-        <a href="/store/quantity/1">1</a>
+        <input type="checkbox" name="quantity[]" id="jadore" value="1">
+        <label>1</label>
         </div>
-   <div>
-        <input type="checkbox" name="quanitity" id="jadore" value="2">
-        <a href="/store/quantity/2">2</a>
-        </div>
+    <div>
+        <input type="checkbox" name="quantity[]" id="jadore" value="3">
+        <label>3</label>
+    </div>
            <div>
-        <input type="checkbox" name="quanitity" id="jadore" value="5">
-        <a href="/store/quantity/5">5</a>
-        </div>
+        <input type="checkbox" name="quantity[]" id="jadore" value="5">
+        <label>5</label>
+    </div>
            <div>
-        <input type="checkbox" name="quanitity" id="jadore" value="10">
-        <a href="/store/quantity/10">10</a>
-        </div>
+        <input type="checkbox" name="quantity[]" id="jadore" value="10">
+        <label>10</label>
+    </div>
            <div>
-        <input type="checkbox" name="quanitity" id="jadore" value="15">
-        <a href="/store/quantity/15">15</a>
-        </div>
+        <input type="checkbox" name="quantity[]" id="jadore" value="15">
+        <label>15</label>
+    </div>
            <div>
-        <input type="checkbox" name="quanitity" id="jadore" value="20">
-        <a href="/store/quantity/20">20</a>
-        </div>
-       
+        <input type="checkbox" name="quantity[]" id="jadore" value="20">
+        <label>20</label>
+    </div>
       </div>
     </div>
     {{!-- x --}}
@@ -131,6 +125,41 @@
        <input type="submit" value="filter" class="filter-categories">
    </div>
     </form>
+<script>
+  document.getElementById('filter-form').addEventListener('submit', function (event) {
+    // Collect the selected brand values
+    const selectedBrands = Array.from(document.querySelectorAll('input[name="brand[]"]:checked')).map(checkbox => checkbox.value);
+
+    const selectedAromas = Array.from(document.querySelectorAll('input[name="aroma[]"]:checked')).map(checkbox => checkbox.value);
+
+    const selectedQuantity = Array.from(document.querySelectorAll('input[name="quantity[]"]:checked')).map(checkbox => checkbox.value);
+
+
+    // Assign the collected values to a hidden input field for submission
+    const hiddenInput = document.createElement('input');
+    hiddenInput.type = 'hidden';
+    hiddenInput.name = 'brand';
+    hiddenInput.value = selectedBrands.join(',');
+
+
+    const hiddenQuantity = document.createElement('input');
+    hiddenQuantity.type = 'hidden';
+    hiddenQuantity.name = 'quantity';
+    hiddenQuantity.value = selectedQuantity.join(',');
+
+    const hiddenAroma = document.createElement('input');
+    hiddenAroma.type = 'hidden';
+    hiddenAroma.name = 'aroma';
+    hiddenAroma.value = selectedAromas.join(',');
+
+
+    this.appendChild(hiddenInput);
+    this.appendChild(hiddenAroma);
+    this.appendChild(hiddenQuantity);
+    
+
+  });
+</script>
  </div>
 
 

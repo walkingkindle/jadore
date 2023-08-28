@@ -8,6 +8,7 @@ import {
   Param,
   Post,
   Res,
+  Body,
 } from '@nestjs/common';
 import { StoreService } from './store.service';
 import { PrismaService } from 'prisma/prisma.service';
@@ -63,6 +64,16 @@ export class StoreController {
     const perfumeData = await this.storeService.getOneProduct(id);
     const comments = await this.storeService.findCommentsByProductId(id);
     return { perfumeData, comments };
+  }
+
+
+  @Post("/filter")
+  @Render("store")
+  async filterPerfumes(@Request() req, @Response() res,@Body('brand')selectedBrands:string[],@Body('aroma') selectedAromas:string[], @Body('quantity') selectedQuantity:string[]){
+    const perfumeData = await this.storeService.getProductsByFilters(selectedAromas,selectedBrands,selectedQuantity)
+
+    return {perfumeData}
+    
   }
 
   @Post('/comment')

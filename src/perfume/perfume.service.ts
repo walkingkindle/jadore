@@ -69,5 +69,14 @@ async formatStrapiResponse(response):Promise<PerfumeResponse>{
       
       return formattedPerfumes;
     }
+
+    async fetchWithApiCall(apiCall:string):Promise<PerfumeResponse[]>{
+      const response = await axios.get(`${apiCall}`,config)
+      const perfumes = response.data.data
+      const formattedPerfumes = await Promise.all(perfumes.map(async (perfume) =>{
+        return this.formatStrapiResponse(perfume)
+      }))
+      return formattedPerfumes
+    }
     
   }
