@@ -35,7 +35,7 @@ main {
   grid-template-columns: 1fr 1fr;
 }
 
-.store-options form div {
+.store-options div div {
   font-size: 1.5rem;
 
   margin-top: 1rem;
@@ -141,7 +141,7 @@ main {
   display: inline-block;
   margin-left: 10px;
 }
-.price-range form {
+.price-range div {
   display: flex;
   align-items: center;
 }
@@ -162,4 +162,16 @@ main {
   font-size: 1.6rem;
   padding: 0rem 1rem;
   border-radius: 50%;
+}
+
+/* SUBMIT- FILTER BUTTON */
+.filter-div {
+  border: 1px solid black;
+  border-top: none;
+}
+
+.filter-categories {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.6rem;
 }

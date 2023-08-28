@@ -21,9 +21,10 @@
    <h1 class="store-title">Full size vials</h2>
  <main>
   <div class="store-options">
-    <div class="categories">
+    <form action="" method="post"> {{!-- OVO JE FORMA ZA FILTRIRANJE KATEGORIJA!!! --}}
+      <div class="categories">
       <button class="brends">Brends</button>
-      <form class="grid-style brend-categories">
+      <div class="grid-style brend-categories">
         <div>
         <a href="/store/brand/Gucci" id="gucci-link"></a>
         <input type="checkbox" name="brand" id="gucci-checkbox" value="Gucci" >
@@ -55,12 +56,12 @@
         <label for="armani">Armani</label>
         <a href="/store/brand/Armani" id="armani-link"></a>
         </div>
-      </form>
+      </div>
     </div>
     {{!-- x --}}
      <div class="categories">
       <button class="aroma">Aroma</button>
-      <form class="grid-style aroma-categories">
+      <div class="grid-style aroma-categories">
         <div>
         <input type="checkbox" name="aroma" id="jadore" value="Warm">
         <a href="/store/aroma/Warm">Warm</a>
@@ -85,12 +86,12 @@
         <input type="checkbox" name="aroma" id="jadore" value="Nice">
         <a href="/store/aroma/Nice">Nice</a>
         </div>
-      </form>
+      </div>
     </div>
     {{!-- x --}}
      <div class="categories">
       <button class="quantity">Quantity</button>
-      <form class="grid-style quantity-categories">
+      <div class="grid-style quantity-categories">
         <div>
         <input type="checkbox" name="quanitity" id="jadore" value="1">
         <a href="/store/quantity/1">1</a>
@@ -115,17 +116,23 @@
         <input type="checkbox" name="quanitity" id="jadore" value="20">
         <a href="/store/quantity/20">20</a>
         </div>
-      </form>
+       
+      </div>
     </div>
     {{!-- x --}}
      <div class="price-range categories">
       <button class="price-range--button">Price</button>
-      <form class="price-categories">
+      <div class="price-categories">
         <input type="range" id="price" class="range-slider" name="price" min="0" max="100" value="0">
         <span class="range-value">0</span>
-      </form>
+      </div>
     </div>
-  </div>
+   <div class="categories filter-div">
+       <input type="submit" value="filter" class="filter-categories">
+   </div>
+    </form>
+ </div>
+
 
   {{!-- OVAJ MARKUP PREDSTAVLJA JEDAN PROIZVOD --}}
   <div class="store-right--side">
@@ -136,7 +143,7 @@
     
      <div class="store-product">
        <a href="/store/product/{{this.id}}">
-      <img src={{this.ImageUrl}} alt="{{this.Name}}">
+      <img src={{this.Image}} alt="{{this.Name}}">
       </a>
       <div>
         <a href="/store/product/{{this.id}}">
