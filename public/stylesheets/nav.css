@@ -296,6 +296,11 @@ select {
   display: grid;
   grid-template-columns: 5rem 1fr;
   align-items: center;
+  border: 1px solid black;
+  border-bottom: none;
+}
+.preview-anchor:last-child {
+  border: 1px solid black;
 }
 
 .preview-image {
