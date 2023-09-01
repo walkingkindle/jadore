@@ -1,0 +1,58 @@
+<html lang="en">
+  <head>
+    {{> header}}
+    <!-----------------CSS---------------------->
+     <link rel="stylesheet" href="/stylesheets/general.css" />
+     <link rel="stylesheet" href="/stylesheets/nav.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+       {{!-- <link rel="stylesheet" href="/stylesheets/product.css" /> --}}
+       <link rel="stylesheet" href="/stylesheets/resultPage.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css" />
+    <link rel="stylesheet" href="/stylesheets/query.css" />
+
+    <title>{{ title }}</title>
+  </head>
+  <body>
+      {{!-- log in - message --}}
+      <div class="log-in--container" id="customContainer">
+      <p class="log-in--message" id="variableMessage">{{someVariable}}</p>
+      </div>
+      {{> nav}}
+
+      <main class="result-main">
+        {{!-- {{inputValue}} --}}
+      </main>
+
+
+       {{> footer}}
+<script>
+  // Get the query parameter values from the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const someVariable = urlParams.get('var');
+  const padding = urlParams.get('padding');
+  
+
+  // Apply the padding value to the container's style
+  const container = document.getElementById('customContainer');
+  container.style.padding = padding;
+
+  // Set the value to the HTML element
+  document.getElementById('variableMessage').textContent = someVariable;
+</script>
+ <script
+      type='module'
+      src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'
+    ></script>
+    <script
+      nomodule
+      src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'
+    ></script>
+      <script src="/scripts/register.js"></script>
+    <script src="/scripts/nav.js"></script>
+    <script>
+        // Access inputValue passed from the server-side
+        const inputValue = `{{ inputValue }}`;
+    </script>
+     <script src="/scripts/resultPage.js"></script>
+
+  </body>

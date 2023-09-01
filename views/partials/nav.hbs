@@ -9,7 +9,7 @@
       </div>
 
       <div class='browse-holder'>
-        <form action=''>
+        <form action='/resultPage' method='post'>
           <label for='browse'></label>
           <input
             type='text'
@@ -24,9 +24,12 @@
             value=''
             class='submit'
             id='search-submit'
+            style='z-index: 9999;'
           />
         </form>
+        {{! <a href='/resultPage'> }}
         <ion-icon name='search-sharp' class='magnifier'></ion-icon>
+        {{! </a> }}
         <div class='preview-container'>
           {{! <img src='images/perfumes/image-9.jpg' alt='' class='preview-image' />
           <p class='preview-name'>test</p> }}

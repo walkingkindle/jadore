@@ -76,8 +76,7 @@ async function findProduct() {
         productCount++; // Increment the counter
       }
     });
-    // productCount = 0;
-    console.log(productCount);
+    productCount = 0;
   } catch (error) {
     console.error('Error fetching data:', error);
   }
@@ -89,7 +88,6 @@ async function getMatchingItemsFromDatabase(searchText) {
   try {
     const response = await fetch(`${apiUrl}?_q=${searchText}`);
     const data = await response.json();
-    console.log(data);
     return data.data; // Strapi typically returns the matched items directly in the response
   } catch (error) {
     throw error;

@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Controller, Get, Render, Response } from '@nestjs/common';
+import { Controller, Get, Render, Response, Post, Req } from '@nestjs/common';
 
 @Controller()
 export class AppController {
@@ -24,5 +24,22 @@ export class AppController {
   getStore(@Response() res) {
     return res.redirect('/store/storemain');
   }
-  
+  @Get('/resultPage')
+  @Render('resultPage')
+  getResult() {
+    const data = {
+      title: 'Contact Page',
+    };
+    return data;
+  }
+  @Post('/resultPage')
+  @Render('resultPage')
+  postResult(@Req() request) {
+    const inputValue = request.body.browse; // Get the input value from the request body
+    const data = {
+      title: 'Contact Page',
+      inputValue: inputValue, // Pass the input value to the template
+    };
+    return data;
+  }
 }
