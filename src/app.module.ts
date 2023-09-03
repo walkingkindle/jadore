@@ -6,6 +6,7 @@ import {PrismaModule} from '../prisma/prisma.module'
 import { GoogleModule } from './google/google.module';
 import { PerfumeModule } from './perfume/perfume.module';
 import { StoreModule } from './store/store.module';
+import { ScartModule } from './scart/scart.module';
 
 @Module({
 
@@ -17,6 +18,7 @@ import { StoreModule } from './store/store.module';
   GoogleModule,
   PerfumeModule,
   StoreModule,
+  ScartModule,
 ],
 })
 export class AppModule {}
