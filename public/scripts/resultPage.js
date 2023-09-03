@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
       const response = await fetch(`${apiUrl}?_q=${inputValue}`);
       const data = await response.json();
-      console.log(data);
       return data.data;
     } catch (error) {
       throw error;
