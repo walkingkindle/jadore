@@ -91,7 +91,7 @@ export class StoreService {
           api_call += `&filters[Aroma][$eq]=${selectedAromas[j]}`;
         }
       }
-      console.log('api key at the second step');
+      console.log('api key at the second step',api_call);
     } else if (selectedAromas) {
       for (let i = 0; i < selectedAromas.length; i++) {
         if (selectedAromas.length > 0) {

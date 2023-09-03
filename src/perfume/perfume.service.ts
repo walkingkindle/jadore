@@ -16,6 +16,7 @@ export interface PerfumeResponse {
     Description:String,
     Image:String,
     PriceMultiplier:Number
+    InStock:Boolean
 
 }
 @Injectable()
@@ -42,7 +43,8 @@ async formatStrapiResponse(response):Promise<PerfumeResponse>{
     Description: response.attributes.Description,
     Price: response.attributes.Price,
     Image:response.attributes.Image,
-    PriceMultiplier:response.attributes.Pricemultiplier
+    PriceMultiplier:response.attributes.Pricemultiplier,
+    InStock:response.attributes.InStock
  }
  return singlePerfume
 }
