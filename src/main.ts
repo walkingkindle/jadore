@@ -5,6 +5,7 @@ import *as path from 'path'
 import * as hbs from 'express-handlebars'
 import * as session from 'express-session'
 import * as dotenv from 'dotenv'
+import * as cors from 'cors'
 async function bootstrap() {
   dotenv.config() 
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -20,6 +21,9 @@ async function bootstrap() {
   app.useStaticAssets(path.join(process.cwd(), 'public'))
   app.setViewEngine('hbs');
   app.setBaseViewsDir(path.join(process.cwd(), 'views'))
+
+  app.use(cors())
+
 
   await app.listen(3000);
 }

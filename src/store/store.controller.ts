@@ -9,6 +9,7 @@ import {
   Post,
   Res,
   Body,
+  Redirect,
 } from '@nestjs/common';
 import { StoreService } from './store.service';
 import { PrismaService } from 'prisma/prisma.service';
@@ -89,5 +90,10 @@ export class StoreController {
     const someVariable = 'Your review was submitted successfully!';
     const padding = '5rem';
     res.redirect(`/store/product/${id}?var=${someVariable}&padding=${padding}`);
+  }
+
+  @Get("/buy")
+  async buyProductRedirect(@Request() req, @Response() res){
+    return res.redirect("/scart/addtocart")
   }
 }

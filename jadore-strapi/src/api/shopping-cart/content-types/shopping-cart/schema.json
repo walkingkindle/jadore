@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shopping_carts",
+  "info": {
+    "singularName": "shopping-cart",
+    "pluralName": "shopping-carts",
+    "displayName": "Shopping-Cart",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Ml": {
+      "type": "integer"
+    },
+    "Price": {
+      "type": "float"
+    },
+    "Quantity": {
+      "type": "integer"
+    },
+    "UserEmail": {
+      "type": "email"
+    },
+    "Status": {
+      "type": "enumeration",
+      "enum": [
+        "paid",
+        "pending",
+        "unpaid"
+      ]
+    }
+  }
+}
