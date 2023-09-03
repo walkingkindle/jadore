@@ -26,7 +26,11 @@
                 <strong>
                  {{perfumeData.Name}} 
                 </strong>
-                <p>In stock</p>
+                {{#if perfumeData.InStock}}
+                <p>In Stock</p>
+                {{else}}
+                <p style="color: red;">Out of Stock</p>
+                {{/if}}
               </div>
               {{!-- article number --}}
               <div class="p-info--two">
