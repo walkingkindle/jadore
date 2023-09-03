@@ -35,3 +35,6 @@ main {
   align-items: center;
   gap: 0.2rem;
 }
+select {
+  font-size: 2rem;
+}
