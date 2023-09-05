@@ -6,7 +6,7 @@ import { UnorderedBulkOperation } from 'typeorm';
 const API_TOKEN = process.env.STRAPI_API_TOKEN;
 const config = {
   headers: {
-    Authorziation: `Bearer ${API_TOKEN}`,
+    Authorization: `Bearer ${API_TOKEN}`,
   },
 };
 export interface PerfumeResponse {
