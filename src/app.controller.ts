@@ -42,4 +42,28 @@ export class AppController {
     };
     return data;
   }
+  @Get('/payment')
+  @Render('payment')
+  getPayment() {
+    const data = {
+      title: 'Payment and Delivery',
+    };
+    return data;
+  }
+  @Get('/about')
+  @Render('about')
+  getAbout() {
+    const data = {
+      title: 'About Us',
+    };
+    return data;
+  }
+  @Get('/catalogue')
+  @Render('catalogue')
+  getCatalogue() {
+    const data = {
+      title: 'Catalogue',
+    };
+    return data;
+  }
 }
