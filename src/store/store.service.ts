@@ -39,7 +39,7 @@ export class StoreService {
     productId: string,
   ): Promise<any> {
     const realRating = parseInt(rating);
-    var date = new Date();
+    const date = new Date(); //asks for const insead of var
     const DateAdded = date.toLocaleDateString();
     const newComment = await this.prisma.comment.create({
       data: {
@@ -91,7 +91,7 @@ export class StoreService {
           api_call += `&filters[Aroma][$eq]=${selectedAromas[j]}`;
         }
       }
-      console.log('api key at the second step',api_call);
+      console.log('api key at the second step', api_call);
     } else if (selectedAromas) {
       for (let i = 0; i < selectedAromas.length; i++) {
         if (selectedAromas.length > 0) {

@@ -175,3 +175,15 @@ main {
   padding: 1rem;
   font-size: 1.6rem;
 }
+
+.filter-sign {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.filter-sign i {
+  margin-right: 5px;
+}

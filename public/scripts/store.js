@@ -15,31 +15,48 @@ testBox.addEventListener('change', function () {
   });
 });
 // categories
-var brends = document.querySelector('.brends');
-var aroma = document.querySelector('.aroma');
-var quantity = document.querySelector('.quantity');
-var priceRange = document.querySelector('.price-range--button');
-var brendCategories = document.querySelector('.brend-categories');
-var aromaCategories = document.querySelector('.aroma-categories');
-var quantityCategories = document.querySelector('.quantity-categories');
-var priceCategories = document.querySelector('.price-categories');
-brends.addEventListener('click', categoryChange(brendCategories));
-aroma.addEventListener('click', categoryChange(aromaCategories));
-quantity.addEventListener('click', categoryChange(quantityCategories));
-priceRange.addEventListener('click', categoryChange(priceCategories));
-function categoryChange(formOff) {
-  var computedStyle = window.getComputedStyle(formOff);
-  var originalDisplay = computedStyle.getPropertyValue('display');
-  var isHidden = false;
-  return function () {
-    if (!isHidden) {
-      formOff.style.display = 'none';
-      isHidden = true;
-    } else {
-      formOff.style.display = originalDisplay; // Set back to the original value
-      isHidden = false;
-    }
-  };
-}
+document.addEventListener('DOMContentLoaded', function () {
+  var brends = document.querySelector('.brends');
+  var aroma = document.querySelector('.aroma');
+  var quantity = document.querySelector('.quantity');
+  var priceRange = document.querySelector('.price-range--button');
+  var brendCategories = document.querySelector('.brend-categories');
+  var aromaCategories = document.querySelector('.aroma-categories');
+  var quantityCategories = document.querySelector('.quantity-categories');
+  var priceCategories = document.querySelector('.price-categories');
+  const filterCategories = document.querySelector('.filter-categories');
 
-// category checkboxes
+  brends.addEventListener('click', categoryChange(brendCategories));
+  aroma.addEventListener('click', categoryChange(aromaCategories));
+  quantity.addEventListener('click', categoryChange(quantityCategories));
+  priceRange.addEventListener('click', categoryChange(priceCategories));
+
+  function categoryChange(formOff) {
+    var computedStyle = window.getComputedStyle(formOff);
+    var originalDisplay = computedStyle.getPropertyValue('display');
+    var isHidden = false;
+    return function () {
+      if (!isHidden) {
+        formOff.style.display = 'none';
+        isHidden = true;
+      } else {
+        formOff.style.display = originalDisplay; // Set back to the original value
+        isHidden = false;
+      }
+    };
+  }
+});
+
+const unfilterBtn = document.querySelector('.unfilter-all');
+unfilterBtn.style.maxWidth = '32rem';
+unfilterBtn.style.marginTop = '0';
+unfilterBtn.style.marginBottom = '1rem';
+
+unfilterBtn.addEventListener('click', () => {
+  const checkBoxes = document.querySelectorAll('.uncheck');
+  checkBoxes.forEach((box) => {
+    if (box.checked) {
+      box.checked = false;
+    }
+  });
+});
