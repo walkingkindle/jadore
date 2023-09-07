@@ -60,3 +60,13 @@ unfilterBtn.addEventListener('click', () => {
     }
   });
 });
+
+// responsive fitler toggle button
+const toggleFilterOn = document.querySelector('.filter-toggle--open');
+toggleFilterOn.addEventListener('click', () => {
+  document.querySelector('.store-options').style.display = 'block';
+});
+const toggleFilterOff = document.querySelector('.filter-toggle--close');
+toggleFilterOff.addEventListener('click', () => {
+  document.querySelector('.store-options').style.display = 'none';
+});

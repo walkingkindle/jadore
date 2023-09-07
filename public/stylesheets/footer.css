@@ -4,7 +4,7 @@ footer {
   width: 100%;
 
   /* max-width: 130rem; */
-  margin: 5rem 0rem 0rem 0rem;
+  margin: 10rem 0rem 0rem 0rem;
   background-color: #e9ecef;
 
   display: grid;
@@ -12,6 +12,9 @@ footer {
   gap: 2rem;
   align-items: top;
   padding: 2rem;
+
+  position: relative;
+  bottom: 0;
 }
 .footer-info h1 {
   font-size: 2rem;

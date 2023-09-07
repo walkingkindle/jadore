@@ -22,6 +22,7 @@
  <main>
   <div class="store-options">
    
+    <ion-icon name="close-circle-outline" class="filter-toggle--close"></ion-icon>
     <button class="unfilter-all">unfilter</button>
     <form action="/store/filter" method="post" id="form"> 
       <div class="categories">
@@ -167,7 +168,7 @@
 
   {{!-- OVAJ MARKUP PREDSTAVLJA JEDAN PROIZVOD --}}
   <div class="store-right--side">
-
+     <ion-icon name="filter-circle-outline" class="filter-toggle--open"></ion-icon>
    <div class="store-products">
     {{!-- x --}}
     {{#each perfumeData}}

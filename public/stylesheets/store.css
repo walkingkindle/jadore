@@ -19,6 +19,7 @@ main {
 /* store-options */
 .store-options {
   /* border: 1px solid lightblue; */
+  position: relative;
 }
 
 .store-options button {
@@ -96,6 +97,7 @@ main {
 .store-product select {
   border: 1px solid gray;
   font-size: 1.5rem;
+  width: 100%;
 }
 .store-product select option {
   text-align: center;
@@ -151,10 +153,13 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  position: relative;
 }
 .store-right--side .pagination {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+  margin-top: 1rem;
   padding: 1rem;
 }
 .pagination a {
@@ -186,4 +191,53 @@ main {
 
 .filter-sign i {
   margin-right: 5px;
+}
+
+.filter-toggle--open {
+  position: absolute;
+  top: -4rem;
+  font-size: 4rem;
+  display: none;
+}
+.filter-toggle--close {
+  position: absolute;
+  top: -4rem;
+  right: 0;
+  font-size: 4rem;
+  display: none;
+}
+
+@media only screen and (max-width: 1350px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .store-options {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    max-width: 30rem;
+    background-color: white;
+    padding: 0rem 1rem;
+    z-index: 100;
+  }
+  .product-order {
+    width: 100%;
+    max-width: 50rem;
+  }
+  .filter-toggle--open,
+  .filter-toggle--close {
+    display: block;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .store-products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (max-width: 500px) {
+  .store-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
