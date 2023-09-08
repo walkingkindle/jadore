@@ -1,3 +1,21 @@
+// can't purchase without qnt selected
+volChecked = false;
+const volRadio = document.querySelectorAll('.volume-radio');
+volRadio.forEach((vol) => {
+  vol.addEventListener('change', () => {
+    if (vol.checked) {
+      volChecked = true;
+    }
+  });
+});
+document.querySelector('.p-info--four--buy').onclick = () => {
+  if (!volChecked) {
+    document.querySelector('.p-info--four--buy').disabled = true;
+    return false;
+  }
+};
+
+// x //
 let dbPrice = document.querySelector('.p-info--four--price');
 
 let oneMl = document.querySelector('#one-ml');
