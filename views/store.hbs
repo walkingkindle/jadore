@@ -190,8 +190,8 @@
     {{/each}}
    </div>
      <div class="pagination">
-    <a href="/newpage">1</a>
-  </div>
+      {{!-- <a href="/newpage">1</a> --}}
+     </div>
   </div>
  </main>
 
@@ -206,6 +206,9 @@
     ></script>
       <script src="/scripts/register.js"></script>
     <script src="/scripts/nav.js"></script>
+    <script>
+      const getProductLength = {{perfumeData.length}};
+    </script>
     <script src="/scripts/store.js"></script>
    
   </body>

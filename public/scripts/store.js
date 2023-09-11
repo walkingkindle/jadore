@@ -70,3 +70,17 @@ const toggleFilterOff = document.querySelector('.filter-toggle--close');
 toggleFilterOff.addEventListener('click', () => {
   document.querySelector('.store-options').style.display = 'none';
 });
+
+// pagination logic
+
+const getPagePerProductNum = Math.ceil(getProductLength / 10);
+
+const paginationContainer = document.querySelector('.pagination');
+
+for (let i = 1; i <= getPagePerProductNum; i++) {
+  var a = document.createElement('a');
+  a.href = '/newpage';
+  var textNode = document.createTextNode(i);
+  a.appendChild(textNode);
+  paginationContainer.appendChild(a);
+}
