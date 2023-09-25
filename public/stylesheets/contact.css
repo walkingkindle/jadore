@@ -46,4 +46,7 @@ select {
   .form-container {
     grid-row: 1;
   }
+  .contact-info {
+    margin-top: 5rem;
+  }
 }

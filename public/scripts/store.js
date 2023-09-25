@@ -79,7 +79,7 @@ const paginationContainer = document.querySelector('.pagination');
 
 for (let i = 1; i <= getPagePerProductNum; i++) {
   var a = document.createElement('a');
-  a.href = '/newpage';
+  a.href = `/store/${i}`;
   var textNode = document.createTextNode(i);
   a.appendChild(textNode);
   paginationContainer.appendChild(a);

@@ -32,6 +32,9 @@
     grid-template-columns: 1fr;
     gap: 1rem;
   }
+  .grid-info a {
+    color: black;
+  }
 }
 
 @media (max-width: 700px) {
@@ -67,9 +70,24 @@
     flex: 0 0 20%;
     display: block;
   }
+  .card .img-wrapper {
+    height: 100%;
+    min-height: 13rem;
+    max-height: 13rem;
+  }
 }
 @media (max-width: 767px) {
   .card .img-wrapper {
-    height: 17em;
+    height: 34em !important;
+    object-fit: cover;
+  }
+  .card .img-wrapper img {
+    height: 100% !important;
+    min-height: 34em !important;
+    max-height: 34em !important;
+    object-fit: cover;
+  }
+  .card {
+    padding: 10rem;
   }
 }

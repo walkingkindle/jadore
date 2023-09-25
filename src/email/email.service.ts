@@ -62,7 +62,7 @@ export class EmailService {
     const resetPasswordLink = `http://localhost:3000/user/resetPassword/${resetToken}/${userId}`;
     try {
       const backgroundImage =
-        'https://scontent.xx.fbcdn.net/v/t1.15752-9/363873162_1788779228241965_7958525108006894893_n.png?stp=dst-png_p206x206&_nc_cat=109&ccb=1-7&_nc_sid=aee45a&_nc_ohc=Oatee0_4dEsAX9jCInQ&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdQqjYgO8zYb6qtpK7HBrX3C9pjjsoCc0u0mGrTvsdmp0A&oe=64F97221';
+        'https://scontent.xx.fbcdn.net/v/t1.15752-9/363873162_1788779228241965_7958525108006894893_n.png?stp=dst-png_p206x206&_nc_cat=109&ccb=1-7&_nc_sid=aee45a&_nc_ohc=t1LTIpJdfiEAX-AGzId&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTS029BsVcIQnozmKJeSRmQhzunU-YPqhwpwApNIDUH5g&oe=65264521';
       this.transporter.sendMail({
         from: process.env.MAIL_MAIL,
         to: email,
@@ -97,23 +97,24 @@ export class EmailService {
       return false;
     }
   }
-  async sendContactMail(name:string,email:string,query:string):Promise<boolean>{
-    try{
-
-    this.transporter.sendMail({
-      from:process.env.MAIL_MAIL,
-      to:email,
-      subject: `Mail from ${name}`,
-      html:`<p>${query}</p>`
-    })
-    return true
-    }catch(error){
-      console.error("Error sending mail,",error)
+  async sendContactMail(
+    name: string,
+    email: string,
+    query: string,
+  ): Promise<boolean> {
+    try {
+      this.transporter.sendMail({
+        from: process.env.MAIL_MAIL,
+        to: email,
+        subject: `Mail from ${name}`,
+        html: `<p>${query}</p>`,
+      });
+      return true;
+    } catch (error) {
+      console.error('Error sending mail,', error);
     }
-    return false
+    return false;
   }
-
-
 }
 
 // sredi ovo urose
