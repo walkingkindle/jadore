@@ -64,12 +64,8 @@
               {{!-- price and pay button --}}
               <div class="p-info--four">
                <p class="p-info--four--price">{{perfumeData.Price}}</p>
-               
-               {{#if perfumeData.InStock}}
-               <a href="#" class="p-info--four--buy">Buy</a>
-               {{else}}
-               <a href="#" class="p-info--four--buy" onclick="return false;">Buy</a>
-               {{/if}}
+              
+               <a href="/store/buy" class="p-info--four--buy">Buy</a>
               </div>
           </div>
         </div>

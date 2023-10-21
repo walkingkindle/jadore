@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "makeups",
+  "info": {
+    "singularName": "makeup",
+    "pluralName": "makeups",
+    "displayName": "Makeup",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Quantity": {
+      "type": "integer"
+    },
+    "InStock": {
+      "type": "boolean"
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "Price": {
+      "type": "decimal"
+    },
+    "Image": {
+      "type": "string"
+    },
+    "Pricemultiplier": {
+      "type": "float"
+    },
+    "Brand": {
+      "type": "string"
+    }
+  }
+}
