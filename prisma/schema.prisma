@@ -11,12 +11,13 @@ datasource db {
 }
 
 model User{
-  id Int @default(autoincrement()) 
+  id Int @default(autoincrement()) @unique
   name String
   email String @unique
   password String
   AuthToken String
   isActivated Boolean @default(false)
+  ShoppingCart ShoppingCart?
 }
 
 model GoogleUser{
@@ -36,3 +37,13 @@ model Comment{
   Date_Added String? 
 }
 
+
+model ShoppingCart{
+  id Int @default (autoincrement()) @unique
+  Name String
+  Quantity Int
+  Status String
+  Price Float
+  user User @relation(fields:[userId],references:[id])
+  userId Int @unique
+}

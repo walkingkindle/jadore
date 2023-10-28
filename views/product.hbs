@@ -38,7 +38,7 @@
               </div>
               {{!-- quantity options --}}
               <div class="p-info--three">
-                 <form>
+                 <form action="/store/addtocart" method="post">
                   <input type="radio" name="volume" value="1" id="one-ml" class="volume-radio">
                  <label for="one-ml">1ml</label>
 
@@ -59,14 +59,15 @@
 
                <input type="radio" name="volume" value="30" id="thirty-ml" class="volume-radio">
               <label for="thirty-ml">30ml</label>
-            </form>
               </div>
               {{!-- price and pay button --}}
               <div class="p-info--four">
                <p class="p-info--four--price">{{perfumeData.Price}}</p>
-              
-               <a href="/store/buy" class="p-info--four--buy">Buy</a>
+                <input type="hidden" value="{{perfumeData.Id}}" name="id">
+                <input type="hidden" name="userid" value="" id="">
+               <button type="submit"  class="p-info--four--buy">Buy</button>
               </div>
+            </form>
           </div>
         </div>
         {{!--description  --}}

@@ -1,10 +1,12 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { PerfumeService } from 'src/perfume/perfume.service';
 import axios from 'axios';
+import { PrismaService } from 'prisma/prisma.service';
 export interface PerfumeInCart{
     Name:String
     Price:Number
-    MI:Number
+    MI:Number,
+    userId:Number
    }
 const API_TOKEN = process.env.STRAPI_API_TOKEN;
 const config = {
@@ -17,37 +19,27 @@ const config = {
 @Injectable()
 export class ScartService {
     constructor(
-    @Inject(PerfumeService) private readonly perfumeService:PerfumeService
+    @Inject(PerfumeService) private readonly perfumeService:PerfumeService, private readonly prismaService:PrismaService
     ){}
-    async addNewProductToCart(id:string,ml:number):Promise<any>{
-        console.log("id is",id)
+    async addNewProductToCart(id:string,volume:number,userId:number):Promise<any>{
         const perfume = await this.perfumeService.fetchPerfumeById(id)
         console.log(perfume)
-       const cartReadyPerfume:PerfumeInCart = {
+        const cartReadyPerfume:PerfumeInCart = {
           Name:perfume.Name,
           Price:perfume.Price,
-          MI:ml,
+          MI:volume,
+          userId:userId
        }
        console.log(cartReadyPerfume)
+       return this.addProductToCartDatabase(cartReadyPerfume)
+    }
+    
 
-       try{
-        const {data,status} = await axios.post<PerfumeInCart>(
-            'http://127.0.0.1:1337/api/shoppingcarts',
-            {cartReadyPerfume},config
-       )
-        console.log(status)
-        return data
+    async addProductToCartDatabase(cartItem:PerfumeInCart){
+          
+    }
 
-
-       }catch(error){
-        if(axios.isAxiosError(error)){
-            console.log('error message:',error.message)
-            return error.message
-        }else{
-            console.log("Unexpected Error",error)
-            return "An unexpected error occurred"
-        }
-       }
+    async GetShopper(accessToken:String){
         
     }
 }

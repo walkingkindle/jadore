@@ -1,0 +1,66 @@
+<html lang="en">
+  <head>
+    {{> header}}
+    <!-----------------CSS---------------------->
+     <link rel="stylesheet" href="/stylesheets/general.css" />
+     <link rel="stylesheet" href="/stylesheets/nav.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+        <link rel="stylesheet" href="/stylesheets/payment.css" />
+    <link rel="stylesheet" href="/stylesheets/footer.css" />
+    <link rel="stylesheet" href="/stylesheets/query.css" />
+
+    <title>{{ title }}</title>
+  </head>
+  <body>
+      {{!-- log in - message --}}
+      <div class="log-in--container">
+      <p class="log-in--message" style="{{stil}}" >{{logMessage}}</p>
+      </div>
+      {{> nav}}
+
+  <main>
+    <h1>About Jadore</h1>
+
+    <article>
+      <p>We have been selling perfumes for more than 10 years. All these years we continue to delight you with the most exciting new products in the world of perfumes and your time-tested favourites.</p>
+      <p>From us, you can buy not only the original aroma in a full-size format, but also try new products in a convenient drinking format.</p>
+      <p>Here you get the guarantee of original products, the hottest new products and nice gifts.</p>
+      <p>Our business is our hobby. We love perfumes and our customers very much</p>
+      <p>The Beauty Trends team</p>
+    </article>
+
+    <div class="delivery-info">
+      <div>
+        <img src="/images/perfumes/perfume-icon-2.png" alt="a perfume icon">
+        <p>We work without minimum order amount</p>
+      </div>
+      <div>
+        <img src="/images/perfumes/perfume-icon-1.png" alt="a perfume icon">
+        <p>the cost of the container is included in the price</p>
+      </div>
+      <div>
+         <img src="/images/perfumes/perfume-icon-3.png" alt="a perfume icon">
+          <p>Only original perfumes</p>
+      </div>
+      <div>
+         <img src="/images/perfumes/perfume-icon-4.png" alt="a perfume icon">
+        <p>Prompt delivery</p>
+      </div>
+    </div>
+  </main>
+
+
+
+  {{> footer}}
+ <script
+      type='module'
+      src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'
+    ></script>
+    <script
+      nomodule
+      src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'
+    ></script>
+      <script src="/scripts/register.js"></script>
+    <script src="/scripts/nav.js"></script>
+   
+  </body>

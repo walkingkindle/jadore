@@ -13,12 +13,14 @@ import {
 } from '@nestjs/common';
 import { StoreService } from './store.service';
 import { PrismaService } from 'prisma/prisma.service';
+import { ScartService } from 'src/scart/scart.service';
 
 @Controller('store')
 export class StoreController {
   constructor(
     private readonly storeService: StoreService,
     private readonly prisma: PrismaService,
+    private readonly scart: ScartService
   ) {}
 
   @Get('/storemain')
@@ -92,8 +94,15 @@ export class StoreController {
     res.redirect(`/store/product/${id}?var=${someVariable}&padding=${padding}`);
   }
 
-  @Get("/buy")
-  async buyProductRedirect(@Request() req, @Response() res){
-    return res.redirect("/scart/addtocart")
+  @Post("addtocart")
+  async addProductToCart(@Body() body: { id: string, volume: number,userid:number }, @Response() res, @Request() req) {
+      const { id, volume } = body;
+      const accessToken = req.cookies.access_token
+      const userid = req.cookies.userId
+      console.log(userid) 
+      // Your logic to add to the cart
+      this.scart.addNewProductToCart(id, volume,userid);
+      return res.render('cart')
   }
+  
 }
