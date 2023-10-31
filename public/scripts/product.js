@@ -13,6 +13,15 @@ document.querySelector('.p-info--four--buy').onclick = () => {
     document.querySelector('.p-info--four--buy').disabled = true;
     return false;
   }
+  const cartNotification = document.querySelector('.cart-notification');
+  cartNotification.textContent = 'Product added to cart!';
+  cartNotification.style.opacity = '1';
+
+  function blendOut() {
+    cartNotification.style.opacity = '0';
+  }
+
+  setTimeout(blendOut, 2000);
 };
 
 // x //

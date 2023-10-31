@@ -16,8 +16,9 @@
       <div class="log-in--container">
       <p class="log-in--message" style="{{stil}}" >{{logMessage}}</p>
       </div>
+     
       {{> nav}}
-  
+     <p class="cart-notification"></p>
    <h1 class="store-title">Full size vials</h2>
  <main>
   <div class="store-options">
@@ -184,7 +185,7 @@
         <select name="quantity" id="">
           <option value="1">{{this.Price}}</option>
         </select>
-         <a href="#" class="product-order">Order</a>
+         <button style="font-size: 1.5rem;" href="#" class="product-order" id="p-order--id">Order</button>
       </div>
     </div>  
     {{/each}}

@@ -63,7 +63,7 @@ export class UserController {
       }
 
       const payload = { sub: user.id, email: user.email };
-      const token = await this.userService.generateToken(payload);
+      const token = await this.userService.generateToken(payload); //JWT TOKEN?
 
       return res.render('index', { token });
     } else {

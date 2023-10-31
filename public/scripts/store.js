@@ -84,3 +84,20 @@ for (let i = 1; i <= getPagePerProductNum; i++) {
   a.appendChild(textNode);
   paginationContainer.appendChild(a);
 }
+
+const cartNotification = document.querySelector('.cart-notification');
+const productOrderBtn = document.querySelectorAll('.product-order');
+
+productOrderBtn.forEach((product) => {
+  product.onclick = () => {
+    cartNotification.textContent = 'Product added to cart!';
+    cartNotification.style.padding = '5rem';
+    cartNotification.style.opacity = '1';
+
+    function blendOut() {
+      cartNotification.style.opacity = '0';
+    }
+
+    setTimeout(blendOut, 2000);
+  };
+});

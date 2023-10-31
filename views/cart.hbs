@@ -5,7 +5,7 @@
      <link rel="stylesheet" href="/stylesheets/general.css" />
      <link rel="stylesheet" href="/stylesheets/nav.css" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
-        <link rel="stylesheet" href="/stylesheets/payment.css" />
+        <link rel="stylesheet" href="/stylesheets/cart.css" />
     <link rel="stylesheet" href="/stylesheets/footer.css" />
     <link rel="stylesheet" href="/stylesheets/query.css" />
 
@@ -19,33 +19,45 @@
       {{> nav}}
 
   <main>
-    <h1>About Jadore</h1>
-
-    <article>
-      <p>We have been selling perfumes for more than 10 years. All these years we continue to delight you with the most exciting new products in the world of perfumes and your time-tested favourites.</p>
-      <p>From us, you can buy not only the original aroma in a full-size format, but also try new products in a convenient drinking format.</p>
-      <p>Here you get the guarantee of original products, the hottest new products and nice gifts.</p>
-      <p>Our business is our hobby. We love perfumes and our customers very much</p>
-      <p>The Beauty Trends team</p>
-    </article>
-
-    <div class="delivery-info">
-      <div>
-        <img src="/images/perfumes/perfume-icon-2.png" alt="a perfume icon">
-        <p>We work without minimum order amount</p>
+    <div class="cart">
+      <div class="product">
+        <img src="/images/perfumes/image-1.jpg" alt="product">
+        <p class="product-name">Armani perfume</p>
+        <div class="product-js--scale">
+          <button class="decrement-product">-</button>
+          <span class="product-qnt">1</span>
+          <button class="increment-product">+</button>
+        </div>
+            <p class="product-price">100$</p>
       </div>
-      <div>
-        <img src="/images/perfumes/perfume-icon-1.png" alt="a perfume icon">
-        <p>the cost of the container is included in the price</p>
-      </div>
-      <div>
-         <img src="/images/perfumes/perfume-icon-3.png" alt="a perfume icon">
-          <p>Only original perfumes</p>
-      </div>
-      <div>
-         <img src="/images/perfumes/perfume-icon-4.png" alt="a perfume icon">
-        <p>Prompt delivery</p>
-      </div>
+  
+    </div>
+    <div class="right-side">
+    <div class="overview">
+      <p>Order overview:</p>
+      <p>
+        Total Price:
+      <span class="total-price">100$</span>
+      </p>
+      <a href="#">Order</a>
+    </div>
+    <div class="shipping-information">
+      <p>Shipping-information</p>
+      <form action="">
+        <label for="name">Full Name</label>
+        <input name="name" type="text">
+        <label for="email">Email</label>
+        <input name="email"  type="email">
+        <label  for="phone">Phone Number</label>
+        <input name="phone" type="tel">
+        <label for="address">Address</label>
+        <input name="address" type="text">
+        <label for="city">City</label>
+        <input name="city" type="text">
+        <label for="zip">Zip Code</label>
+        <input name="zip" type="number">
+      </form>
+    </div>
     </div>
   </main>
 

@@ -66,4 +66,12 @@ export class AppController {
     };
     return data;
   }
+  @Get('/cart')
+  @Render('cart')
+  getCart() {
+    const data = {
+      title: 'Cart',
+    };
+    return data;
+  }
 }
