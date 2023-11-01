@@ -16,7 +16,7 @@ function setAccessToken(token) {
 
   // Access the user ID
   const userId = payload.sub; // "sub" is the standard claim for the subject (user ID)
-
+  localStorage.setItem('user-id', userId);
   console.log('User ID:', userId);
   // END OF DECODE
 }
