@@ -19,6 +19,8 @@
       {{> nav}}
 
   <main>
+    
+
     <div class="cart">
       <div class="product">
         <img src="/images/perfumes/image-1.jpg" alt="product">
@@ -45,6 +47,14 @@
     <div class="right-side">
     <div class="overview">
       <p>Order overview:</p>
+      <div>
+        <p>Name:</p>
+        <p>Email:</p>
+        <p>Phone-number:</p>
+        <p>Address:</p>
+        <p>City:</p>
+        <p>payment-type:</p>
+      </div>
       <p>
         Total Price:
       <span class="total-price">100$</span>
@@ -66,6 +76,21 @@
         <input name="city" type="text">
         <label for="zip">Zip Code</label>
         <input name="zip" type="number">
+      </form>
+    </div>
+    <div class="payment-information">
+      <p>Payment options</p>
+      <form action="">
+        <div>
+          <input type="radio" id="on-delivery" value="cash" name="payment">
+          <label for="on-delivery">On-delivery</label>
+          <p>Pay with cash on delivery</p>
+        </div>
+        <div>
+          <input type="radio" id="by-credit" value="card" name="payment">
+          <label for="by-credit">Credit card</label>
+          <p>Pay with your credit card through our website</p>
+        </div>
       </form>
     </div>
     </div>

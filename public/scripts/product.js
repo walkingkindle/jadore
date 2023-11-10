@@ -1,28 +1,47 @@
 // can't purchase without qnt selected
-volChecked = false;
+let volChecked;
+window.addEventListener('load', function () {
+  volRadio.forEach((vol) => {
+    vol.checked = false;
+  });
+});
+
 const volRadio = document.querySelectorAll('.volume-radio');
 volRadio.forEach((vol) => {
   vol.addEventListener('change', () => {
     if (vol.checked) {
       volChecked = true;
+    } else {
+      volChecked = false;
     }
   });
 });
+
 document.querySelector('.p-info--four--buy').onclick = () => {
+  const buyButton = document.querySelector('.p-info--four--buy');
+
   if (!volChecked) {
-    document.querySelector('.p-info--four--buy').disabled = true;
-    return false;
+    buyButton.disabled = true;
+    showNotification('Quantity not selected!');
+  } else {
+    showNotification('Product added to cart!');
   }
+};
+
+if (volChecked) {
+  document.querySelector('.p-info--four--buy').style.diplay = 'none';
+  document.querySelector('.purchase-inquiry').style.dispaly = 'block';
+}
+
+function showNotification(message) {
   const cartNotification = document.querySelector('.cart-notification');
-  cartNotification.textContent = 'Product added to cart!';
+  cartNotification.textContent = message;
   cartNotification.style.opacity = '1';
 
-  function blendOut() {
+  setTimeout(() => {
     cartNotification.style.opacity = '0';
-  }
-
-  setTimeout(blendOut, 2000);
-};
+  }, 2000);
+}
 
 // x //
 let dbPrice = document.querySelector('.p-info--four--price');
@@ -46,41 +65,48 @@ let volThirty = parseInt(document.querySelector('#thirty-ml').value);
 oneMl.addEventListener('change', function () {
   if (this.checked) {
     dbPrice.innerHTML = defaultPrice * volOne;
+    document.querySelector('.p-info--four--buy').disabled = false;
   }
 });
 
 threeMl.addEventListener('change', function () {
   if (this.checked) {
     dbPrice.textContent = defaultPrice * volThree;
+    document.querySelector('.p-info--four--buy').disabled = false;
   }
 });
 
 fiveMl.addEventListener('change', function () {
   if (this.checked) {
     dbPrice.innerHTML = defaultPrice * volFive;
+    document.querySelector('.p-info--four--buy').disabled = false;
   }
 });
 
 tenMl.addEventListener('change', function () {
   if (this.checked) {
     dbPrice.innerHTML = defaultPrice * volTen;
+    document.querySelector('.p-info--four--buy').disabled = false;
   }
 });
 
 fifteenMl.addEventListener('change', function () {
   if (this.checked) {
     dbPrice.innerHTML = defaultPrice * volFifteen;
+    document.querySelector('.p-info--four--buy').disabled = false;
   }
 });
 
 twentyMl.addEventListener('change', function () {
   if (this.checked) {
     dbPrice.innerHTML = defaultPrice * volTwenty;
+    document.querySelector('.p-info--four--buy').disabled = false;
   }
 });
 
 thirtyMl.addEventListener('change', function () {
   if (this.checked) {
     dbPrice.innerHTML = defaultPrice * volThirty;
+    document.querySelector('.p-info--four--buy').disabled = false;
   }
 });

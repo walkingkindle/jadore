@@ -19,6 +19,8 @@
       {{> nav}}
       {{!-- main --}}
       <main>
+     
+
         <div class="product-container">
           <img src="{{perfumeData.Image}}" alt="{{perfumeData.Name}}">
           <div class="product-info">
@@ -65,8 +67,12 @@
                <p class="p-info--four--price">{{perfumeData.Price}}</p>
                 <input type="hidden" value="{{perfumeData.Id}}" name="id">
                 <input type="hidden" name="userid" value="" id="">
-               <button type="submit"  class="p-info--four--buy">Buy</button>
+               <button  class="p-info--four--buy">Add to cart</button>
                 <p class="cart-notification"></p>
+                   <div class="purchase-inquiry">
+      <button type="submit">proceed to cart</button>
+      <button>stay on the page</button>
+    </div>
               </div>
             </form>
           </div>
@@ -110,7 +116,7 @@
                 <label for='comment'></label>
                 <textarea
                   name='review'
-                  id=''
+                  
                   rows='10'
                   placeholder='Your review'
                   class='comment'

@@ -167,3 +167,25 @@ input[type='radio']:checked + label:before {
     grid-template-columns: 1fr;
   }
 }
+.cart-notification {
+  transition: opacity 0.5s;
+}
+
+.purchase-inquiry {
+  border: 1px solid black;
+  width: 100%;
+  max-width: 320px;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  display: none;
+}
+.purchase-inquiry button {
+  padding: 0.5rem;
+  font-size: 1.6rem;
+  max-height: 50px;
+  max-width: 320px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
