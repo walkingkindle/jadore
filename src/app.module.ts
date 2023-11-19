@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
@@ -7,7 +7,7 @@ import { GoogleModule } from './google/google.module';
 import { PerfumeModule } from './perfume/perfume.module';
 import { StoreModule } from './store/store.module';
 import { ScartModule } from './scart/scart.module';
-
+import * as cookieParser from 'cookie-parser'
 @Module({
 
   controllers: [AppController],
@@ -21,4 +21,8 @@ import { ScartModule } from './scart/scart.module';
   ScartModule,
 ],
 })
-export class AppModule {}
+export class AppModule implements NestModule{
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(cookieParser()).forRoutes("*")
+  }
+}

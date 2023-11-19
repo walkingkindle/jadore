@@ -14,6 +14,8 @@ import {
 import { StoreService } from './store.service';
 import { PrismaService } from 'prisma/prisma.service';
 import { ScartService } from 'src/scart/scart.service';
+import * as jwt from 'jsonwebtoken'
+import { decorators } from 'handlebars';
 
 @Controller('store')
 export class StoreController {
@@ -95,14 +97,23 @@ export class StoreController {
   }
 
   @Post("addtocart")
-  async addProductToCart(@Body() body: { id: string, volume: number,userid:number }, @Response() res, @Request() req) {
-      const { id, volume } = body;
-      const accessToken = req.cookies.access_token
-      const userid = req.cookies.userId
-      console.log(userid) 
-      // Your logic to add to the cart
-      this.scart.addNewProductToCart(id, volume,userid);
-      return res.render('cart')
+  async addProductToCart(@Body() body: { id: string, volume: number, userid: number }, @Response() res, @Request() req) {
+      const { id, volume, userid } = body;
+      console.log(req.cookies)
+      const token  = req.cookies.access_token
+      if(token){
+        try{
+          const decodedToken = jwt.verify(token,process.env.JWT_SECRET);
+          req['user'] = decodedToken
+        }catch(error){
+          console.error(error)
+        }
+      }
+      const userId = req['user'] ? req['user'].sub : null
+      console.log(userId);
+      this.scart.addNewProductToCart(id,volume,userId)
+      return res.render('cart');
+      //finish the cart method by redirecting this scart.service async methods.
   }
   
 }

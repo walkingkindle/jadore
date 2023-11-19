@@ -65,6 +65,8 @@ export class UserController {
       const payload = { sub: user.id, email: user.email };
       const token = await this.userService.generateToken(payload); //JWT TOKEN?
 
+      res.cookie('access_token', token, { httpOnly: true, sameSite: 'strict' });
+
       return res.render('index', { token });
     } else {
       return res.render('index', { logMessage: 'User not found' });

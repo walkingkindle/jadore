@@ -6,6 +6,7 @@ import * as hbs from 'express-handlebars'
 import * as session from 'express-session'
 import * as dotenv from 'dotenv'
 import * as cors from 'cors'
+import * as cookieParser from 'cookie-parser'
 async function bootstrap() {
   dotenv.config() 
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -24,6 +25,7 @@ async function bootstrap() {
 
   app.use(cors())
 
+  app.use(cookieParser());
 
   await app.listen(3000);
 }

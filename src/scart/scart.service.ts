@@ -36,7 +36,15 @@ export class ScartService {
     
 
     async addProductToCartDatabase(cartItem:PerfumeInCart){
-          
+      const cart = await this.prismaService.shoppingCart.create({
+        data:{
+          Name:cartItem.Name.toString(),
+          Quantity:Number(cartItem.MI),
+          Status:"in-cart",
+          Price:Number(cartItem.Price),
+          userId:Number(cartItem.userId)
+        }
+      })
     }
 
     async GetShopper(accessToken:String){
