@@ -112,8 +112,7 @@ export class StoreController {
       const userId = req['user'] ? req['user'].sub : null
       console.log(userId);
       this.scart.addNewProductToCart(id,volume,userId)
-      return res.render('cart');
-      //finish the cart method by redirecting this scart.service async methods.
+      return res.redirect('/scart/showcart')
   }
   
 }

@@ -2,6 +2,7 @@ import { Inject, Injectable } from '@nestjs/common';
 import { PerfumeService } from 'src/perfume/perfume.service';
 import axios from 'axios';
 import { PrismaService } from 'prisma/prisma.service';
+import { PrismaClientUnknownRequestError } from '@prisma/client/runtime/library';
 export interface PerfumeInCart{
     Name:String
     Price:Number
@@ -36,6 +37,7 @@ export class ScartService {
     
 
     async addProductToCartDatabase(cartItem:PerfumeInCart){
+    try{
       const cart = await this.prismaService.shoppingCart.create({
         data:{
           Name:cartItem.Name.toString(),
@@ -45,9 +47,20 @@ export class ScartService {
           userId:Number(cartItem.userId)
         }
       })
+      }catch(PrismaClientUnknownRequestError){
+        console.log('Item already in the cart, add another one?')
+        return null
+      }
+      
     }
 
     async GetShopper(accessToken:String){
         
+    }
+
+    async showCart(){
+     const cart = this.prismaService.shoppingCart.findMany()
+     console.log(cart)
+     
     }
 }
